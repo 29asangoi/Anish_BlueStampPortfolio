@@ -55,6 +55,10 @@ For your first milestone, describe what your project is and how you plan to buil
 # Schematics 
 Here's where you'll put images of your schematics. [Tinkercad](https://www.tinkercad.com/blog/official-guide-to-tinkercad-circuits) and [Fritzing](https://fritzing.org/learning/) are both great resoruces to create professional schematic diagrams, though BSE recommends Tinkercad becuase it can be done easily and for free in the browser. 
 
+# Starter Project
+For my starter project, I chose the Weevil Eye project. This was because it would allow me to develop a deeper understanding of sensors and how they work. Additionally, this allowed me to become better at soldering because I was tasked throuhgout this project to do a lot of soldering with the different components that was required. However, I soon learned that another alternative to soldering was using a breadboard to connect the different components together. 
+
+
 # Code
 Here's where you'll put your code. The syntax below places it into a block of code. Follow the guide [here]([url](https://www.markdownguide.org/extended-syntax/)) to learn how to customize it to your project needs. 
 
@@ -89,8 +93,6 @@ Don't forget to place the link of where to buy each component inside the quotati
 | Male and Female Jumper wire | Can connect the different holes of the breadboard through electrical current | $3.99 | https://www.amazon.com/California-JOS-Breadboard-Optional-Multicolored/dp/B0BRTHR2RL/ref=sr_1_2?crid=12HDY8COKXU7G&dib=eyJ2IjoiMSJ9.QGbaFF62mgZ1Tf0J7CajkBnivKMOTOpZJUS1O07RvMRENtZVJaMJRebisvoGuONAUbMs4isV3OfmSypDrsemEs6cNRBuQtGINiH6Cov_SZV7HWAa9gcVoDnt8Qi10xl2DZmlKvN3pihDVKyTAwRpmDOA2SVccHwtgbfBWR8CHMIz2E2jgKtDaydoH-vg04ZvVYZkSEPuxa4Pi0h43TTyCCUqPOIyxR4UNFt2T9EhRb0.oUYzEh7imYQWSU9IqG_b9zYbz4iKmTC31SdtSn6x_YQ&dib_tag=se&keywords=male+and+female+jumper+wires&qid=1750435690&sprefix=male+and+female+jumper+wire%2Caps%2C171&sr=8-2|
 | DC Motor | Important for the movement of the robot| $4.50 | https://www.amazon.com/MELIFE-Motor-Gearbox-200RPM-Arduino/dp/B096ZZHJW9/ref=sr_1_2_sspa?crid=1F0AAO9104AWG&dib=eyJ2IjoiMSJ9.dLwDHynjItuTGgGIKFMBAlIU7xXmOYDFzqRgQxKR9rUSsGx778rP3casDsBLFsO3uGFxcUcYlT0Pk4seuUs0EOehcXBTo9SmHPmZgJkSKOwSdsFMbOCG28M91HcUKM9aOeJpXEXXjr5rqQqPiVTZ2z3n0k2ocTAQy9vjZZG_pvNUk1SgAxepBUSVwiFibq4_3lUNDD1K9jZgZ1FCHqKQBENh71G8d86YfUIIOfrCLUhZTMocB5XQqPwWxhMebaXXpNhgM8U7-DffnmFzHsvW40eF7NuTkMo7YukVr9WYx8E.iUyFw2SVBWHrN-4aYlxxYcOfX39ocfVYIOQRAe_lECE&dib_tag=se&keywords=DC+5V+TT+motors+2+pack+for+robotics%22+or+%22DC+5V+geared+motors+2+pack&qid=1750435848&sprefix=dc+5v+tt+motors+2+pack+for+robotics+or+dc+5v+geared+motors+2+pack%2Caps%2C193&sr=8-2-spons&sp_csd=d2lkZ2V0TmFtZT1zcF9hdGY&psc=1 |
 | Breadboard | Important for the connection of wires without soldering| $2.33 each | https://www.amazon.com/ELEGOO-Breadboard-Solderless-Breadboards-Electronics/dp/B0CXF1B6GB/ref=sr_1_1?dib=eyJ2IjoiMSJ9.I97R4jYNHrG8QkfjAbfHenxXhtfgMK0AP7ANAmSG9evSP9skjmtIUZKxtD5_g84siMcvhyjaNP9-rGswComPUSSufGx0vektoD591Ljl21tbITqO0M4d5WpS6ulvMwJwfNV7WvPaL82nHS2VIk17mC5C3pi2HeaQ57JjTDuwLsLRuiL89pRY1BwdJnDxzxluSR3_oW2j6YHElcVQXoz0wmW_rmNbh_e_uGm1IaRRASk.zo0hag_AHNlUOMVIVbu4rdaIXExqOmYuAbQgEYZmx_U&dib_tag=se&keywords=arduino+breadboard&qid=1750435971&sr=8-1|
-
-
 # Other Resources/Examples
 One of the best parts about Github is that you can view how other people set up their own work. Here are some past BSE portfolios that are awesome examples. You can view how they set up their portfolio, and you can view their index.md files to understand how they implemented different portfolio components.
 - [Example 1](https://trashytuber.github.io/YimingJiaBlueStamp/)
