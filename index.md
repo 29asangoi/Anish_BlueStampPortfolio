@@ -58,6 +58,7 @@ Here's where you'll put images of your schematics. [Tinkercad](https://www.tinke
 # Starter Project
 For my starter project, I chose the Weevil Eye project. This was because it would allow me to develop a deeper understanding of sensors and how they work. Additionally, this allowed me to become better at soldering because I was tasked throuhgout this project to do a lot of soldering with the different components that was required. However, I soon learned that another alternative to soldering was using a breadboard to connect the different components together. 
 
+<img src="Screen%20Shot%202025-06-23%20at%208.42.30%20AM.png" alt="Screenshot">
 
 # Code
 Here's where you'll put your code. The syntax below places it into a block of code. Follow the guide [here]([url](https://www.markdownguide.org/extended-syntax/)) to learn how to customize it to your project needs. 
