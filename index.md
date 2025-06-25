@@ -13,7 +13,7 @@ You should comment out all portions of your portfolio that you have not complete
 
 ![Headstone Image](AnishS.HEIC)
   
-# Final Milestone
+<!# Final Milestone
 
 **Don't forget to replace the text below with the embedding for your milestone video. Go to Youtube, click Share -> Embed, and copy and paste the code to replace what's below.**
 
@@ -37,10 +37,10 @@ For your second milestone, explain what you've worked on since your previous mil
 - Technical details of what you've accomplished and how they contribute to the final goal
 - What has been surprising about the project so far
 - Previous challenges you faced that you overcame
-- What needs to be completed before your final milestone 
+- What needs to be completed before your final milestone--->
 
 # First Milestone
-<h2>📺 Demo Video</h2>
+
 
 <div align="center">
   <iframe width="560" height="315"
