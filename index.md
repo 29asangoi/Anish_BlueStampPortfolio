@@ -61,7 +61,8 @@ When beginning working toward my first milestone, I attached every component on.
 Here's where you'll put images of your schematics. [Tinkercad](https://www.tinkercad.com/blog/official-guide-to-tinkercad-circuits) and [Fritzing](https://fritzing.org/learning/) are both great resoruces to create professional schematic diagrams, though BSE recommends Tinkercad becuase it can be done easily and for free in the browser. 
 
 # Starter Project
-iframe width="560" height="315" src="https://www.youtube.com/embed/xZFvOUwT63U" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/xZFvOUwT63U" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
 
 For my starter project, I chose the Weevil Eye project. This was because it would allow me to develop a deeper understanding of sensors and how they work. Additionally, this allowed me to become better at soldering because I was tasked throuhgout this project to do a lot of soldering with the different components that was required. However, I soon learned that another alternative to soldering was using a breadboard to connect the different components together. 
 There were some challenges in attaching the LED components because I was not sure about the placement of the legs (both short and long). So, I had to restart the project, but I worked quickly and was able to get it to work. The sensor does not quite work consistently, but if it is dark, then it will work more consistently. 
