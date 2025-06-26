@@ -41,7 +41,12 @@ For your second milestone, explain what you've worked on since your previous mil
 
 # Second Milestone
 
-<div style="position:relative; width:100%; height:0px; padding-bottom:56.250%"><iframe allow="fullscreen" allowfullscreen height="100%" src="https://streamable.com/e/l43npf?" width="100%" style="border:none; width:100%; height:100%; position:absolute; left:0px; top:0px; overflow:hidden;"></iframe></div>
+  <h2>Move by Code Video</h2>
+  <iframe width="640" height="360" 
+          src="https://youtu.be/X0dyLCp5_js" 
+          frameborder="0" 
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+          allowfullscreen>
 
 # First Milestone
 
