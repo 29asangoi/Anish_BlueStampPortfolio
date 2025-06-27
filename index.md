@@ -50,6 +50,7 @@ Below is a video when I tested my robot after moving it by using the code. The r
           allowfullscreen>
 
 Below is a video when I tested my robot with the "speed up" code. For one half of the video, the robot will start at a "base speed", which is its lowest speed. Then, the robot will gradually increase speed, but as it does so, it actually waits for about 0.5 seconds before each increase in speed. This small wait period is harder to notice and makes it seem like the robot is always moving. For the other half of the video, the robot's base speed is its highest possible speed. Then, it will climb down to its lowest possible speed, and will slow down until it is not in motion at all. The delay period described earlier applies for all changes in speed of the robot. 
+
 <iframe width="560" height="315" src="https://www.youtube.com/embed/_To6-qzbhQQ" frameborder="0" allowfullscreen></iframe>
 
 # First Milestone
