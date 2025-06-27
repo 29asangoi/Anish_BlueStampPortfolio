@@ -41,6 +41,7 @@ For your second milestone, explain what you've worked on since your previous mil
 
 # Second Milestone
 
+Below is a video when I tested my robot after moving it by using the code. The robot will move forward for a bit, before moving in left, right, and backwards in order to form a complete circle. The formation of the complete circle is important for the other pieces of code, which use this motion. The robot does not move in a completely straight line, however, and there would need to be a speed calibration tool installed in order to make this work.
   <h2>Move by Code Video</h2>
   <iframe width="640" height="360" 
           src="https://youtu.be/X0dyLCp5_js" 
@@ -48,7 +49,8 @@ For your second milestone, explain what you've worked on since your previous mil
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
           allowfullscreen>
 
-  <iframe width="560" height="315" src="https://www.youtube.com/embed/_To6-qzbhQQ" frameborder="0" allowfullscreen></iframe>
+Below is a video when I tested my robot with the "speed up" code. For one half of the video, the robot will start at a "base speed", which is its lowest speed. Then, the robot will gradually increase speed, but as it does so, it actually waits for about 0.5 seconds before each increase in speed. This small wait period is harder to notice and makes it seem like the robot is always moving. For the other half of the video, the robot's base speed is its highest possible speed. Then, it will climb down to its lowest possible speed, and will slow down until it is not in motion at all. The delay period described earlier applies for all changes in speed of the robot. 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/_To6-qzbhQQ" frameborder="0" allowfullscreen></iframe>
 
 # First Milestone
 
