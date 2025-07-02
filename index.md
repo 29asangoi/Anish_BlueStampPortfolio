@@ -107,11 +107,11 @@ For my starter project, I chose the **Weevil Eye**. It helped me learn about sen
 ## 💻 Code Explanation Charts
 <h2>Code Explanation Table</h2>
 
-<table border="1" cellpadding="10">
-  <thead>
+<table border="1" cellpadding="10" cellspacing="0" style="border-collapse: collapse; width: 100%;">
+  <thead style="background-color: #f2f2f2;">
     <tr>
-      <th>Code</th>
-      <th>What it Means</th>
+      <th style="text-align: left;">Code</th>
+      <th style="text-align: left;">What It Means</th>
     </tr>
   </thead>
   <tbody>
@@ -124,36 +124,35 @@ For my starter project, I chose the **Weevil Eye**. It helped me learn about sen
         const int lineTrack = 2;
       </td>
       <td>
-        This is the very beginning of the code where all pins are defined.<br>
-        The first four lines connect Arduino pins to the H-Bridge motor driver.<br>
-        The last line assigns pin 2 for the line tracking sensor input.
+        These lines define constants that map Arduino digital pins to motor and sensor connections.<br>
+        The first four lines are outputs to the H-Bridge motor driver.<br>
+        The last line assigns pin 2 to the line tracking sensor input.
       </td>
     </tr>
-    
+
     <tr>
       <td>
         void setup() {<br>
         &nbsp;&nbsp;Serial.begin(9600);
       </td>
       <td>
-        The <code>setup()</code> function runs once to initialize the system.<br>
-        <code>Serial.begin(9600)</code> sets up communication between the Arduino and your computer at 9600 baud rate.
+        The <code>setup()</code> function runs once at the start.<br>
+        <code>Serial.begin(9600)</code> enables serial communication for debugging at 9600 baud.
       </td>
     </tr>
 
     <tr>
       <td>
-        //motor<br>
         pinMode(A_1B, OUTPUT);<br>
         pinMode(A_1A, OUTPUT);<br>
         pinMode(B_1B, OUTPUT);<br>
         pinMode(B_1A, OUTPUT);<br>
-        //line track<br>
         pinMode(lineTrack, INPUT);
       </td>
       <td>
-        Sets motor pins as OUTPUT so they can send signals to the motors.<br>
-        Sets the line tracking sensor pin as INPUT to receive data from the sensor.
+        These lines define each pin’s mode:<br>
+        Motor control pins are set as <code>OUTPUT</code> to send signals.<br>
+        The line sensor pin is set as <code>INPUT</code> to receive data.
       </td>
     </tr>
 
@@ -163,8 +162,8 @@ For my starter project, I chose the **Weevil Eye**. It helped me learn about sen
         &nbsp;&nbsp;int speed = 150;
       </td>
       <td>
-        This is the main loop that repeats continuously.<br>
-        Sets the robot's motor speed to 150 (range is 0 to 255).
+        The <code>loop()</code> function runs repeatedly.<br>
+        <code>speed = 150</code> sets the robot's motor speed (range: 0–255).
       </td>
     </tr>
 
@@ -174,10 +173,10 @@ For my starter project, I chose the **Weevil Eye**. It helped me learn about sen
         Serial.println(lineColor);
       </td>
       <td>
-        Reads the line tracking sensor:<br>
-        <code>0</code> = no line detected (white surface)<br>
-        <code>1</code> = line detected (black surface)<br>
-        The result is printed in the Serial Monitor.
+        Reads the sensor value from <code>lineTrack</code>:<br>
+        <code>0</code> = white (no line detected),<br>
+        <code>1</code> = black (line detected).<br>
+        Prints result to Serial Monitor for debugging.
       </td>
     </tr>
 
@@ -190,8 +189,8 @@ For my starter project, I chose the **Weevil Eye**. It helped me learn about sen
         }
       </td>
       <td>
-        If a line is detected (value is 1), the robot moves left.<br>
-        Otherwise (value is 0), it moves right.
+        If a line is detected (<code>lineColor == 1</code>), the robot moves left.<br>
+        Otherwise, it moves right.
       </td>
     </tr>
 
@@ -205,7 +204,7 @@ For my starter project, I chose the **Weevil Eye**. It helped me learn about sen
         }
       </td>
       <td>
-        Moves the robot to the left by running Motor A forward while stopping Motor B.
+        Moves the robot left by activating Motor A forward and keeping Motor B off.
       </td>
     </tr>
 
@@ -219,7 +218,7 @@ For my starter project, I chose the **Weevil Eye**. It helped me learn about sen
         }
       </td>
       <td>
-        Moves the robot to the right by running Motor B forward while stopping Motor A.
+        Moves the robot right by activating Motor B forward and keeping Motor A off.
       </td>
     </tr>
   </tbody>
