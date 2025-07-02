@@ -124,61 +124,7 @@ For my starter project, I chose the **Weevil Eye**. It helped me learn about sen
 ---
 # Code Explanantions
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Arduino Code and Explanations</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-            background-color: #f4f4f4;
-            color: #333;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-bottom: 20px;
-            background-color: #fff;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        th, td {
-            border: 1px solid #ddd;
-            padding: 12px;
-            text-align: left;
-            vertical-align: top;
-        }
-        th {
-            background-color: #f2f2f2;
-            font-weight: bold;
-        }
-        pre {
-            background-color: #eef;
-            padding: 10px;
-            border-radius: 4px;
-            overflow-x: auto;
-            white-space: pre-wrap; /* Ensures long lines wrap */
-            word-wrap: break-word; /* Ensures long words break */
-            font-family: 'Courier New', Courier, monospace;
-        }
-    </style>
-</head>
-<body>
 
-    <h1>Arduino Code and Explanations</h1>
-
-    <table>
-        <thead>
-            <tr>
-                <th>Code/Functions</th>
-                <th>Explanation</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td><pre>const int A_1B = 5;
 const int A_1A = 6;
 const int B_1A = 9;
 const int B_1B = 10;</pre></td>
