@@ -122,9 +122,156 @@ For my starter project, I chose the **Weevil Eye**. It helped me learn about sen
 <img src="Screen%20Shot%202025-06-23%20at%208.42.30%20AM.png" alt="Weevil Eye">
 
 ---
+# Code Explanantions
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arduino Code and Explanations</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+            vertical-align: top;
+        }
+        th {
+            background-color: #f2f2f2;
+            font-weight: bold;
+        }
+        pre {
+            background-color: #eef;
+            padding: 10px;
+            border-radius: 4px;
+            overflow-x: auto;
+            white-space: pre-wrap; /* Ensures long lines wrap */
+            word-wrap: break-word; /* Ensures long words break */
+            font-family: 'Courier New', Courier, monospace;
+        }
+    </style>
+</head>
+<body>
 
+    <h1>Arduino Code and Explanations</h1>
 
+    <table>
+        <thead>
+            <tr>
+                <th>Code/Functions</th>
+                <th>Explanation</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><pre>const int A_1B = 5;
+const int A_1A = 6;
+const int B_1A = 9;
+const int B_1B = 10;</pre></td>
+                <td>Initializes every pin that I used throughout the project on the Arduino board through pins 5, 6, 9 and 10 and they all appear on the Arduino Uno board.</td>
+            </tr>
+            <tr>
+                <td><pre>void setup() {
+  pinMode(A_1B, OUTPUT);
+  pinMode(A_1A, OUTPUT);
+  pinMode(B_1A, OUTPUT);
+  pinMode(B_1B, OUTPUT);
+}</pre></td>
+                <td>The second set explains how on the L9110 module there are pins (like A_1A, B) that act as the output for the pins. The input of all the pins are then in their respective location in the Arduino Uno board.</td>
+            </tr>
+            <tr>
+                <td><pre>void moveForward() {
+  digitalWrite(A_1A, HIGH);
+  digitalWrite(A_1B, LOW);
+  digitalWrite(B_1A, HIGH);
+  digitalWrite(B_1B, LOW);
+}</pre></td>
+                <td>The "LOW" that is shown means that that section will not be activated. The "HIGH" that is shown represents an activation in the move forward code.</td>
+            </tr>
+            <tr>
+                <td><pre>void moveBackward() {
+  digitalWrite(A_1A, LOW);
+  digitalWrite(A_1B, HIGH);
+  digitalWrite(B_1A, LOW);
+  digitalWrite(B_1B, HIGH);
+}</pre></td>
+                <td>For the move forward section, it means that the motor will only move a certain direction, in this case it is forward and the A_1A and the B_1B sections on the L9110 module. For the move backward section, it means that the motor will only move a certain direction, in this case it is backward and the A_1B and the B_1A sections on the L9110 module.</td>
+            </tr>
+            <tr>
+                <td><pre>void turnRight() {
+  digitalWrite(A_1A, HIGH);
+  digitalWrite(A_1B, LOW);
+  digitalWrite(B_1A, LOW);
+  digitalWrite(B_1B, HIGH);
+}</pre></td>
+                <td>In this case it is backward and the A_1B and the B_1A sections on the L9110 module.</td>
+            </tr>
+            <tr>
+                <td><pre>void turnLeft() {
+  digitalWrite(A_1A, LOW);
+  digitalWrite(A_1B, HIGH);
+  digitalWrite(B_1A, HIGH);
+  digitalWrite(B_1B, LOW);
+}</pre></td>
+                <td>The "LOW" that is shown means that that section will not be activated. The "HIGH" that is shown represents an activation in the move forward code. For the move right section, it means that the motor will only move a certain direction, in this case it is right and the A_1B and the B_1B sections on the L9110 module. For the move left section, it means that the motor will only move a certain direction, in this case it is left and the A_1A and the B_1A sections on the L9110 module.</td>
+            </tr>
+            <tr>
+                <td><pre>void stopMove() {
+  digitalWrite(A_1A, LOW);
+  digitalWrite(A_1B, LOW);
+  digitalWrite(B_1A, LOW);
+  digitalWrite(B_1B, LOW);
+}</pre></td>
+                <td>This is the most simple piece of code and the most important. This is because its function is to set each pin to LOW, meaning that none of the pins will be activated and this will allow for the robot to stop moving. This is added at the end of the code upon completion of the movements for forward, backward, left, and right.</td>
+            </tr>
+            <tr>
+                <td><pre>void loop() {
+  moveForward();
+  delay(2000);
+  stopMove();
+  delay(500);
+
+  moveBackward();
+  delay(2000);
+  stopMove();
+  delay(500);
+
+  turnLeft();
+  delay(2000);
+  stopMove();
+  delay(500);
+
+  turnRight();
+}</pre></td>
+                <td>The robot goes forward for 2 seconds, stops for 0.5 seconds, then goes backward for 2 seconds, stops for 0.5 seconds, and repeats this cycle forever. Then, it repeats this same process, but for moving left and right. The delays are the same here. Delays are represented in milliseconds delay (2000) = 2 second delay delay (500) = 0.5 second delay The void loop must be declared in order for this process to be repeated. The move forward and the move backward must be defined in order for this to occur, and these codes are added in earlier sections.</td>
+            </tr>
+            <tr>
+                <td><pre>delay(2000);
+stopMove();
+delay(500);</pre></td>
+                <td>The same is required for moving left and right.</td>
+            </tr>
+        </tbody>
+    </table>
+
+</body>
+</html>
+
+---
 # Bill of Materials
 Below I list the project materials for the project. Most of the supplies that I used are attached in the kit
 
@@ -146,6 +293,178 @@ Below I list the project materials for the project. Most of the supplies that I 
     </tr>
   </tbody>
 </table>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terminology Chart</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+            vertical-align: top;
+        }
+        th {
+            background-color: #f2f2f2;
+            font-weight: bold;
+        }
+        ul {
+            list-style-type: decimal; /* For numbered lists */
+            margin-left: 20px;
+            padding-left: 0;
+        }
+        ul li {
+            margin-bottom: 5px;
+        }
+        strong {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Terminology Chart</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Term</th>
+                <th>What it means</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>pin</td>
+                <td>For the human-following robot, the "pin" term refers to the Arduino R3 board that the wires are connected to. On the right side, there are some numbers from 0-13. In this case, "pin" refers to any of these numbers.</td>
+            </tr>
+            <tr>
+                <td>value</td>
+                <td>
+                    <ol>
+                        <li><strong>"HIGH"</strong> - This to the computer means "1", meaning that the component to which the high value is assigned will activate.</li>
+                        <li><strong>"HIGH"</strong> - This to the computer means "0", meaning that the component to which the high value is assigned will not activate.</li>
+                    </ol>
+                </td>
+            </tr>
+            <tr>
+                <td>(pin, value)</td>
+                <td>These two terms above are referring to the (pin, value) format used in the code</td>
+            </tr>
+            <tr>
+                <td>mode</td>
+                <td>Refers to INPUT &rarr; What is being plugged</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>into</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>Refers to OUTPUT</td>
+            </tr>
+        </tbody>
+    </table>
+
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Component Function Chart</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+            vertical-align: top;
+        }
+        th {
+            background-color: #f2f2f2;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Component Function Chart</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Component/Attachment Part</th>
+                <th>Function (Applies to the motor direction)</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>A_1A</td>
+                <td>Can move forward and left</td>
+            </tr>
+            <tr>
+                <td>A_1B</td>
+                <td>Can move backward and right</td>
+            </tr>
+            <tr>
+                <td>B_1A</td>
+                <td>Can move backward and left</td>
+            </tr>
+            <tr>
+                <td>B_1B</td>
+                <td>Can move forward and right</td>
+            </tr>
+            <tr>
+                <td>A Hub (before the underscore)</td>
+                <td>Indicates forward and backward motion</td>
+            </tr>
+            <tr>
+                <td>B Hub (before the underscore)</td>
+                <td>Indicates the forward and backward motion</td>
+            </tr>
+            <tr>
+                <td>1A Hub</td>
+                <td>Indicates left and right motion</td>
+            </tr>
+            <tr>
+                <td>1B Hub</td>
+                <td>Indicates left and right motion</td>
+            </tr>
+        </tbody>
+    </table>
+
+</body>
+</html>
 
 
 
