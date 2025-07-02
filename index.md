@@ -110,50 +110,6 @@ Below is a visual of how different components like the batteries, Arduino, and b
 
 <img src="https://raw.githubusercontent.com/29asangoi/Anish_BlueStampPortfolio/gh-pages/Screen%20Shot%202025-06-25%20at%209.05.49%20AM.png" alt="Schematic">
 
----
-## Code Explanations 
-
-| Code | What it Means |
-|---|---|
-| **Sunfounder Move by Code** |  |
-| ```cpp
-const int A_1B = 5;
-const int B_1B = 9;
-const int B_1A = 10;
-const int A_1A = 6; // Assuming this pin is also initialized here based on previous context
-``` | Initializes the pin numbers used throughout the project (pins 5, 6, 9, and 10 on the Arduino Uno board) as constants. |
-| ```cpp
-void setup() {
-  pinMode(A_1A, OUTPUT);
-  pinMode(B_1A, OUTPUT);
-  pinMode(A_1B, OUTPUT);
-  pinMode(B_1B, OUTPUT);
-}
-``` | Sets the specified pins (A_1A, B_1A, A_1B, B_1B) on the L9110 H-Bridge module as OUTPUT pins, preparing them to send signals to the motors. |
-| ```cpp
-void moveForward() {
-  digitalWrite(A_1A, LOW);
-  digitalWrite(B_1A, HIGH);
-  digitalWrite(A_1B, LOW);
-  digitalWrite(B_1B, LOW);
-}
-``` | Sets the digital states of the motor control pins to make the robot move forward. `LOW` means the pin is off, `HIGH` means it's activated. |
-| ```cpp
-void moveBackward() {
-  digitalWrite(A_1A, HIGH);
-  digitalWrite(A_1B, LOW);
-  digitalWrite(B_1A, HIGH);
-  digitalWrite(B_1B, LOW);
-}
-``` | Sets the digital states of the motor control pins to make the robot move backward. |
-| ```cpp
-void turnRight() {
-  digitalWrite(A_1A, HIGH);
-  digitalWrite(A_1A, LOW); // This line seems redundant if A_1A is set HIGH just before.
-  digitalWrite(B_1B, HIGH);
-  digitalWrite(B
-
-
 
 ---
 
