@@ -113,282 +113,46 @@ Below is a visual of how different components like the batteries, Arduino, and b
 ---
 ## Code Explanations 
 
-<table>
-  <thead>
-    <tr>
-      <th>Code</th>
-      <th>What it Means</th>
-    </tr>
-  </thead>
-  <tbody>
-    <!-- Sunfounder Move by Code -->
-    <tr>
-      <td colspan="2" style="text-align: center; background-color: #f0f0f0;">
-        <strong>Sunfounder Move by Code</strong>
-      </td>
-    </tr>
-    <tr>
-      <td>
-<pre><code>const int A_1B = 5;
+| Code | What it Means |
+|---|---|
+| **Sunfounder Move by Code** |  |
+| ```cpp
+const int A_1B = 5;
 const int B_1B = 9;
 const int B_1A = 10;
-const int A_1A = 6; // Assuming this pin is also initialized here based on previous context</code></pre>
-      </td>
-      <td>Initializes the pin numbers used throughout the project (pins 5, 6, 9, and 10 on the Arduino Uno board) as constants.</td>
-    </tr>
-    <tr>
-      <td>
-<pre><code>void setup() {
+const int A_1A = 6; // Assuming this pin is also initialized here based on previous context
+``` | Initializes the pin numbers used throughout the project (pins 5, 6, 9, and 10 on the Arduino Uno board) as constants. |
+| ```cpp
+void setup() {
   pinMode(A_1A, OUTPUT);
   pinMode(B_1A, OUTPUT);
   pinMode(A_1B, OUTPUT);
   pinMode(B_1B, OUTPUT);
-}</code></pre>
-      </td>
-      <td>Sets the specified pins (A_1A, B_1A, A_1B, B_1B) on the L9110 H-Bridge module as OUTPUT pins, preparing them to send signals to the motors.</td>
-    </tr>
-    <tr>
-      <td>
-<pre><code>void moveForward() {
+}
+``` | Sets the specified pins (A_1A, B_1A, A_1B, B_1B) on the L9110 H-Bridge module as OUTPUT pins, preparing them to send signals to the motors. |
+| ```cpp
+void moveForward() {
   digitalWrite(A_1A, LOW);
   digitalWrite(B_1A, HIGH);
   digitalWrite(A_1B, LOW);
   digitalWrite(B_1B, LOW);
-}</code></pre>
-      </td>
-      <td>Sets the digital states of the motor control pins to make the robot move forward. `LOW` means the pin is off, `HIGH` means it's activated.</td>
-    </tr>
-    <tr>
-      <td>
-<pre><code>void moveBackward() {
+}
+``` | Sets the digital states of the motor control pins to make the robot move forward. `LOW` means the pin is off, `HIGH` means it's activated. |
+| ```cpp
+void moveBackward() {
   digitalWrite(A_1A, HIGH);
   digitalWrite(A_1B, LOW);
   digitalWrite(B_1A, HIGH);
   digitalWrite(B_1B, LOW);
-}</code></pre>
-      </td>
-      <td>Sets the digital states of the motor control pins to make the robot move backward.</td>
-    </tr>
-    <tr>
-      <td>
-<pre><code>void turnRight() {
+}
+``` | Sets the digital states of the motor control pins to make the robot move backward. |
+| ```cpp
+void turnRight() {
   digitalWrite(A_1A, HIGH);
   digitalWrite(A_1A, LOW); // This line seems redundant if A_1A is set HIGH just before.
   digitalWrite(B_1B, HIGH);
-  digitalWrite(B_1A, LOW);
-}</code></pre>
-      </td>
-      <td>Sets the digital states of the motor control pins to make the robot turn right.</td>
-    </tr>
-    <tr>
-      <td>
-<pre><code>void turnLeft() {
-  digitalWrite(A_1B, LOW);
-  digitalWrite(A_1A, HIGH);
-  digitalWrite(B_1A, HIGH);
-  digitalWrite(B_1B, LOW);
-}</code></pre>
-      </td>
-      <td>Sets the digital states of the motor control pins to make the robot turn left.</td>
-    </tr>
-    <tr>
-      <td>
-<pre><code>void stopMove() {
-  digitalWrite(A_1A, LOW);
-  digitalWrite(A_1A, LOW); // This line seems redundant if A_1A is set LOW just before.
-  digitalWrite(B_1B, LOW);
-  digitalWrite(B_1B, LOW); // This line seems redundant if B_1B is set LOW just before.
-}</code></pre>
-      </td>
-      <td>Sets all relevant motor control pins to `LOW`, deactivating them and causing the robot to stop moving.</td>
-    </tr>
-    <tr>
-      <td>
-<pre><code>void loop() {
-  moveForward();
-  delay(2000);
-  stopMove();
-  delay(500);
+  digitalWrite(B
 
-  moveBackward();
-  delay(2000);
-  stopMove();
-  delay(500);
-
-  turnLeft();
-  delay(2000);
-
-  stopMove();
-  delay(500);
-
-  turnRight();
-  delay(2000);
-  stopMove();
-  delay(500);
-}</code></pre>
-      </td>
-      <td>
-        <p>The main program loop, which continuously repeats the robot's movement sequence:</p>
-        <ul>
-          <li>Move forward for 2 seconds (`delay(2000)`).</li>
-          <li>Stop for 0.5 seconds (`delay(500)`).</li>
-          <li>Move backward for 2 seconds.</li>
-          <li>Stop for 0.5 seconds.</li>
-          <li>Turn left for 2 seconds.</li>
-          <li>Stop for 0.5 seconds.</li>
-          <li>Turn right for 2 seconds.</li>
-          <li>Stop for 0.5 seconds.</li>
-        </ul>
-        <p>Delays are specified in milliseconds.</p>
-      </td>
-    </tr>
-
-    <!-- Sunfounder Speed Up code -->
-    <tr>
-      <td colspan="2" style="text-align: center; background-color: #f0f0f0;">
-        <strong>Sunfounder Speed Up Code</strong>
-      </td>
-    </tr>
-    <tr>
-      <td>
-<pre><code>void loop() {
-  for(int i=5; i<=255;i+=5){
-    moveForward();
-    delay(500);
-  }
-}</code></pre>
-      </td>
-      <td>
-        <p>This loop, part of the main `loop()` function, gradually increases the robot's speed. The variable `i` starts at 5 and increases by 5 in each step until it reaches 255. `moveForward()` is called at each step, and there's a 0.5-second delay before the next speed increment. Higher `i` values mean faster movement.</p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-<pre><code>for(int i=255;i>=0;i-=5){
-  moveForward();
-  delay(500);
-}</code></pre>
-      </td>
-      <td>
-        <p>This loop, also part of the main `loop()` function, gradually decreases the robot's speed. The variable `i` starts at 255 and decreases by 5 in each step until it reaches 0. `moveForward()` is called at each step, with a 0.5-second delay before the next speed decrement.</p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-<pre><code>void moveForward(int speed) {
-  analogWrite(A_1B, 0);
-  analogWrite(A_1A, speed);
-  analogWrite(B_1B, speed);
-  analogWrite(B_1A, 0);
-}</code></pre>
-      </td>
-      <td>
-        <p>This function controls the robot's forward movement using an analog `speed` value (0-255). `analogWrite` sends a Pulse Width Modulation (PWM) signal to the motor pins (A_1A and B_1B) on the H-Bridge, allowing for variable speed control. Pins A_1B and B_1A are set to 0 (off).</p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-<pre><code>for (initialization; condition; increment) {
-  // statement(s);
-}</code></pre>
-      </td>
-      <td>This is the general syntax for a `for` loop in C++/Arduino, used to repeat a block of code a specified number of times. It includes three parts: `initialization` (runs once at the start), `condition` (checked before each iteration), and `increment` (runs after each iteration).</td>
-    </tr>
-
-    <!-- Sunfounder Line Detector code -->
-    <tr>
-      <td colspan="2" style="text-align: center; background-color: #f0f0f0;">
-        <strong>Sunfounder Line Detector Code (Follow the Line)</strong>
-      </td>
-    </tr>
-    <tr>
-      <td>
-<pre><code>const int lineTrack = 2; // Assuming this pin is initialized here
-void setup() {
-  Serial.begin(9600);
-  pinMode(lineTrack, INPUT); // Setting lineTrack pin as INPUT
-}</code></pre>
-      </td>
-      <td>
-        <p>Initializes serial communication at 9600 bits per second for debugging. It also sets the `lineTrack` pin (connected to the line tracking module) as an `INPUT` to read signals from it.</p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-<pre><code>//color
-//pinMode(A_1B, OUTPUT); // Already covered in Move by Code setup
-//pinMode(A_1A, OUTPUT); // Already covered in Move by Code setup
-//pinMode(B_1B, OUTPUT); // Already covered in Move by Code setup
-//pinMode(B_1A, OUTPUT); // Already covered in Move by Code setup
-//line track
-//pinMode(lineTrack, INPUT); // Moved to setup() above for clarity</code></pre>
-      </td>
-      <td>
-        <p>These `pinMode` declarations for motor control are typically done once in the main `setup()` function. The `lineTrack` pin setup is now explicitly shown in the `setup()` block above for the Line Detector section.</p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-<pre><code>void loop() {</code></pre>
-      </td>
-      <td>This indicates the beginning of the main `loop()` function, where the continuous line-following behavior will be implemented.</td>
-    </tr>
-    <tr>
-      <td>
-<pre><code>int speed = 150;</code></pre>
-      </td>
-      <td>Defines an integer variable `speed` and sets its initial value to 150. This variable will be used to control the motor speed for line following.</td>
-    </tr>
-    <tr>
-      <td>
-<pre><code>int lineColor = digitalRead(lineTrack);
-//0:white 1:black
-Serial.println(lineColor); //print on the serial monitor</code></pre>
-      </td>
-      <td>
-        <p>Reads the digital state of the `lineTrack` sensor. `0` typically indicates a white surface (no line detected), and `1` indicates a black line detected. This value is printed to the serial monitor for real-time monitoring.</p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-<pre><code>if (lineColor) {
-  moveRight(speed);
-} else {
-  moveRight(speed);
-}</code></pre>
-      </td>
-      <td>
-        <p>This conditional statement checks the `lineColor`. If `lineColor` is `1` (true, black line detected), it calls `moveRight(speed)`. If `lineColor` is `0` (false, white surface), it also calls `moveRight(speed)`. This specific logic suggests the robot might always move right in this simplified example, regardless of line detection, or it's part of a larger, more complex line-following algorithm not fully shown.</p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-<pre><code>void moveRight(int speed) {
-  analogWrite(A_1B, 0);
-  analogWrite(A_1A, speed);
-  analogWrite(B_1B, 0);
-  analogWrite(B_1A, 0);
-}</code></pre>
-      </td>
-      <td>
-        <p>This is one implementation of the `moveRight` function. It uses `analogWrite` to control the motors, setting `A_1A` to the specified `speed` while other relevant pins are off (`0`). This configuration would likely activate one side's motor for turning right.</p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-<pre><code>void moveRight(int speed) {
-  analogWrite(A_1A, 0);
-  analogWrite(A_1B, 0);
-  analogWrite(B_1A, speed);
-  analogWrite(B_1B, 0);
-}</code></pre>
-      </td>
-      <td>
-        <p>This is another implementation of the `moveRight` function. In this version, `B_1A` is set to the `speed` value, with other relevant pins off. This would control a different motor or side of the robot to achieve a rightward movement, potentially offering a different turning radius or motor control.</p>
-      </td>
-    </tr>
-  </tbody>
-</table>
 
 
 ---
