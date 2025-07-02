@@ -139,15 +139,7 @@ const int B_1A = 10;</code></pre>
       </td>
       <td>The "LOW" that is shown means that that section will not be activated.
 The "HIGH" that is shown represents an activation in the move forward code.</td>
-    </tr>
-    <tr>
-      <td>
-        <p>...</p>
-      </td>
-      <td>For the move forward section, it means that</td>
-    </tr>
-    <tr>
-      <td>
+   
 <pre><code>const int A_1B = 5;
 const int A_1A = 6;
 const int B_1B = 9;
