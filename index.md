@@ -122,100 +122,7 @@ For my starter project, I chose the **Weevil Eye**. It helped me learn about sen
 <img src="Screen%20Shot%202025-06-23%20at%208.42.30%20AM.png" alt="Weevil Eye">
 
 ---
-# Code Explanantions
 
-const int A_1A = 5
-const int A_1A = 6;
-const int B_1A = 9;
-const int B_1B = 10;</pre></td>
-                <td>Initializes every pin that I used throughout the project on the Arduino board through pins 5, 6, 9 and 10 and they all appear on the Arduino Uno board.</td>
-            </tr>
-            <tr>
-                <td><pre>void setup() {
-  pinMode(A_1B, OUTPUT);
-  pinMode(A_1A, OUTPUT);
-  pinMode(B_1A, OUTPUT);
-  pinMode(B_1B, OUTPUT);
-}</pre></td>
-                <td>The second set explains how on the L9110 module there are pins (like A_1A, B) that act as the output for the pins. The input of all the pins are then in their respective location in the Arduino Uno board.</td>
-            </tr>
-            <tr>
-                <td><pre>void moveForward() {
-  digitalWrite(A_1A, HIGH);
-  digitalWrite(A_1B, LOW);
-  digitalWrite(B_1A, HIGH);
-  digitalWrite(B_1B, LOW);
-}</pre></td>
-                <td>The "LOW" that is shown means that that section will not be activated. The "HIGH" that is shown represents an activation in the move forward code.</td>
-            </tr>
-            <tr>
-                <td><pre>void moveBackward() {
-  digitalWrite(A_1A, LOW);
-  digitalWrite(A_1B, HIGH);
-  digitalWrite(B_1A, LOW);
-  digitalWrite(B_1B, HIGH);
-}</pre></td>
-                <td>For the move forward section, it means that the motor will only move a certain direction, in this case it is forward and the A_1A and the B_1B sections on the L9110 module. For the move backward section, it means that the motor will only move a certain direction, in this case it is backward and the A_1B and the B_1A sections on the L9110 module.</td>
-            </tr>
-            <tr>
-                <td><pre>void turnRight() {
-  digitalWrite(A_1A, HIGH);
-  digitalWrite(A_1B, LOW);
-  digitalWrite(B_1A, LOW);
-  digitalWrite(B_1B, HIGH);
-}</pre></td>
-                <td>In this case it is backward and the A_1B and the B_1A sections on the L9110 module.</td>
-            </tr>
-            <tr>
-                <td><pre>void turnLeft() {
-  digitalWrite(A_1A, LOW);
-  digitalWrite(A_1B, HIGH);
-  digitalWrite(B_1A, HIGH);
-  digitalWrite(B_1B, LOW);
-}</pre></td>
-                <td>The "LOW" that is shown means that that section will not be activated. The "HIGH" that is shown represents an activation in the move forward code. For the move right section, it means that the motor will only move a certain direction, in this case it is right and the A_1B and the B_1B sections on the L9110 module. For the move left section, it means that the motor will only move a certain direction, in this case it is left and the A_1A and the B_1A sections on the L9110 module.</td>
-            </tr>
-            <tr>
-                <td><pre>void stopMove() {
-  digitalWrite(A_1A, LOW);
-  digitalWrite(A_1B, LOW);
-  digitalWrite(B_1A, LOW);
-  digitalWrite(B_1B, LOW);
-}</pre></td>
-                <td>This is the most simple piece of code and the most important. This is because its function is to set each pin to LOW, meaning that none of the pins will be activated and this will allow for the robot to stop moving. This is added at the end of the code upon completion of the movements for forward, backward, left, and right.</td>
-            </tr>
-            <tr>
-                <td><pre>void loop() {
-  moveForward();
-  delay(2000);
-  stopMove();
-  delay(500);
-
-  moveBackward();
-  delay(2000);
-  stopMove();
-  delay(500);
-
-  turnLeft();
-  delay(2000);
-  stopMove();
-  delay(500);
-
-  turnRight();
-}</pre></td>
-                <td>The robot goes forward for 2 seconds, stops for 0.5 seconds, then goes backward for 2 seconds, stops for 0.5 seconds, and repeats this cycle forever. Then, it repeats this same process, but for moving left and right. The delays are the same here. Delays are represented in milliseconds delay (2000) = 2 second delay delay (500) = 0.5 second delay The void loop must be declared in order for this process to be repeated. The move forward and the move backward must be defined in order for this to occur, and these codes are added in earlier sections.</td>
-            </tr>
-            <tr>
-                <td><pre>delay(2000);
-stopMove();
-delay(500);</pre></td>
-                <td>The same is required for moving left and right.</td>
-            </tr>
-        </tbody>
-    </table>
-
-</body>
-</html>
 
 ---
 # Bill of Materials
@@ -239,6 +146,8 @@ Below I list the project materials for the project. Most of the supplies that I 
     </tr>
   </tbody>
 </table>
+
+---
 
 # Code Explanantions
 
