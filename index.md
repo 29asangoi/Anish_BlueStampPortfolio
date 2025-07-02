@@ -51,19 +51,46 @@ Below is a video when I tested my robot after moving it by using the code. The r
 
 Below is a video when I tested my robot with the "speed up" code. For one half of the video, the robot will start at a "base speed", which is its lowest speed. Then, the robot will gradually increase speed, but as it does so, it actually waits for about 0.5 seconds before each increase in speed. This small wait period is harder to notice and makes it seem like the robot is always moving. For the other half of the video, the robot's base speed is its highest possible speed. Then, it will climb down to its lowest possible speed, and will slow down until it is not in motion at all. The delay period described earlier applies for all changes in speed of the robot. 
 
+
+
+
 <iframe width="560" height="315" src="https://www.youtube.com/embed/_To6-qzbhQQ" frameborder="0" allowfullscreen></iframe>
+
+
+
 
 I have been able to accomplish several achievements with my robot, but the best one and the most challenging one is the line detection sensor. I have a piece of black electrical tape that will affect the robot’s movement, as you can see here. 
 
+
+
+
+
 Technical Explanation of the movement by code
 The first part of the milestone was to move the robot by using code. The general assembly of the movement by code remained the same as I had done for my first milestone, but I just needed to program it. The first part of the code involved using pin numbers in order to Initialize every pin that I used throughout the duration of the project. Then, I was able to learn about functions through C++ code through the move forward, right, left, and backwards. Certain  sections on the H-Bridge would correspond to these movements. Motor A is in charge of the left movements, while Motor B is in charge of right movements. Then, the wires on both motors correspond to one hub on the H-Bridge, which will either move it forwards or backwards. There are points where the robot may stop, in which every single motor’s hub is “LOW”, meaning that it is turned off. 
+
+
+
+
 
 Technical Explanation of the speed calibration
 The second part of the second milestone was to be able to speed it up gradually by increments of five. There is a loop in the code, meaning that it will increase the code by 5 starting from 0 repeatedly until it reaches its ending point. The “i” is a variable that changes, and this is what is being increased. It is also an integer.  The overall pattern of i begins at 0 and increases by 5 and reaches its max at 255. This speed is important in the overall code and is actually mentioned later on when moving left and right because the robot spins around in the direction. 
 
 
+
+
+
+
+
+
+
 Technical Explanation of the line detector
 Unlike the other technical explanations which really just involved code and attaching the code this one is much more extensive, and hence, it took me a lot longer in order to complete this. There were three parts to the assembly due to there being three wire attachment points on the line detector module. The first wire’s attachment point is the Arduino Uno Board, and this attachment is Pin 2. Then the other attachment points are on the breadboard, and specifically they consist of the 5 Volts section and the GRD connectors. The 5 Volt connectors are important for the power and electrical current for the robot. The basic assembly for the line following robot connects the Line Tracking Module with Pin 2, and this is connected to the first unique line of  code for the line detector. In this project, I also learned about the serial monitor and how it is important to see if the code is working. When I used this, I was able to see the distinction between “1” and “0”. In the code, a “1” means that the line has been detected, and the computer will move in the appropriate direction such that it follows the path of the line. I also learned how to set a speed for the robot, and learned that getting slower speed might be more helpful. This code also uses functions, meaning that the move left and right functions are defined and then are also used spending on if the robot detects a line or not. 
+
+
+
+
+
+
 
 
 
@@ -73,7 +100,16 @@ For the line detector, I encountered some problems. First, when I set this, I be
 
 
 
+
+
+
+
+
 # First Milestone
+
+
+
+
 
 
 <div align="center">
