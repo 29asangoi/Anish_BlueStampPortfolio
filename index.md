@@ -91,11 +91,6 @@ Below is a visual of how different components like the batteries, Arduino, and b
 
 ---
 
-<!--
-# Schematics
-
-Add custom diagrams from Tinkercad or Fritzing here if needed
--->
 
 ---
 
