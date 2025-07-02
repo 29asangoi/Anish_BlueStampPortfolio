@@ -139,7 +139,15 @@ const int B_1A = 10;</code></pre>
       </td>
       <td>The "LOW" that is shown means that that section will not be activated.
 The "HIGH" that is shown represents an activation in the move forward code.</td>
-   
+    </tr>
+    <tr>
+      <td>
+        <p>...</p>
+      </td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>
 <pre><code>const int A_1B = 5;
 const int A_1A = 6;
 const int B_1B = 9;
@@ -207,6 +215,7 @@ For the move right section, it means that the motor will only move a certain dir
       <td>This is the most simple piece of code and the most important. This is because in function is to set each pin to LOW, meaning that none of the pins will be activated and this will allow for the robot to stop moving.</td>
     </tr>
   </tbody>
+</table>>
 </table>
 
 ---
