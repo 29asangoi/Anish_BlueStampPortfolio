@@ -1,162 +1,127 @@
 # Human-Following Robot
-What if you could have a robot that follows you around effortlessly without your control? Well, this summer that will be my task to build such a robot. Thus, this would be the general goal for the robot. 
-You should comment out all portions of your portfolio that you have not completed yet, as well as any instructions:
-```HTML 
-<!--- This is an HTML comment in Markdown -->
-<!--- Anything between these symbols will not render on the published site -->
-```
 
+What if you could have a robot that follows you around effortlessly without your control? Well, this summer that will be my task to build such a robot. Thus, this would be the general goal for the robot.
 
-| Anish S. | Stratford School | Computer Science | Incoming Freshman
+| Anish S. | Stratford School | Computer Science | Incoming Freshman |
 
-**Replace the BlueStamp logo below with an image of yourself and your completed project. Follow the guide [here](https://tomcam.github.io/least-github-pages/adding-images-github-pages-site.html) if you need help.**
+---
+
+### **Project Image**
+
+**Replace the BlueStamp logo below with an image of yourself and your completed project.**
 
 ![Headstone Image](AnishS.HEIC)
-  
-<!---# Final Milestone
 
-**Don't forget to replace the text below with the embedding for your milestone video. Go to Youtube, click Share -> Embed, and copy and paste the code to replace what's below.**
+---
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/F7M7imOVGug" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<!--
+# Final Milestone
 
-For your final milestone, explain the outcome of your project. Key details to include are:
+<iframe width="560" height="315" src="https://www.youtube.com/embed/F7M7imOVGug" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
+
 - What you've accomplished since your previous milestone
-- What your biggest challenges and triumphs were at BSE
-- A summary of key topics you learned about
-- What you hope to learn in the future after everything you've learned at BSE
+- Biggest challenges and triumphs
+- Summary of key topics learned
+- What you hope to learn next
+-->
 
+---
 
+## 🛠️ Second Milestone
 
-# Second Milestone
+<iframe width="640" height="360" src="https://youtu.be/X0dyLCp5_js" frameborder="0" allowfullscreen></iframe>
 
-**Don't forget to replace the text below with the embedding for your milestone video. Go to Youtube, click Share -> Embed, and copy and paste the code to replace what's below.**
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/y3VAmNlER5Y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-
-For your second milestone, explain what you've worked on since your previous milestone. You can highlight:
-- Technical details of what you've accomplished and how they contribute to the final goal
-- What has been surprising about the project so far
-- Previous challenges you faced that you overcame
-- What needs to be completed before your final milestone--->
-
-# Second Milestone
-
-Below is a video when I tested my robot after moving it by using the code. The robot will move forward for a bit, before moving in left, right, and backwards in order to form a complete circle. The formation of the complete circle is important for the other pieces of code, which use this motion. The robot does not move in a completely straight line, however, and there would need to be a speed calibration tool installed in order to make this work.
-
-  <iframe width="640" height="360" 
-          src="https://youtu.be/X0dyLCp5_js" 
-          frameborder="0" 
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-          allowfullscreen>
-
-Below is a video when I tested my robot with the "speed up" code. For one half of the video, the robot will start at a "base speed", which is its lowest speed. Then, the robot will gradually increase speed, but as it does so, it actually waits for about 0.5 seconds before each increase in speed. This small wait period is harder to notice and makes it seem like the robot is always moving. For the other half of the video, the robot's base speed is its highest possible speed. Then, it will climb down to its lowest possible speed, and will slow down until it is not in motion at all. The delay period described earlier applies for all changes in speed of the robot. 
-
-
-
+In this milestone, I tested the robot's movement. It first moves forward, then in all directions to form a full circle — which is critical for later code functions.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/_To6-qzbhQQ" frameborder="0" allowfullscreen></iframe>
 
+In this video, the robot starts at a base speed and increases speed with a short delay between changes. It also demonstrates the opposite: starting fast and gradually slowing to a stop. The robot simulates acceleration and deceleration smoothly.
 
+---
 
+### 🔧 Technical Explanation: Movement by Code
 
-I have been able to accomplish several achievements with my robot, but the best one and the most challenging one is the line detection sensor. I have a piece of black electrical tape that will affect the robot’s movement, as you can see here. 
+The robot's movement uses C++ functions to go forward, backward, left, and right. Motor A controls left-side movement and Motor B controls the right. The H-Bridge controls current flow. To stop the robot, all H-Bridge outputs are set to `LOW`.
 
+---
 
+### ⚙️ Technical Explanation: Speed Calibration
 
+Using a `for` loop, the robot increases speed from 0 to 255 in increments of 5. This change is controlled using an integer variable `i`, and is important when rotating the robot to adjust turning responsiveness.
 
+---
 
-Technical Explanation of the movement by code
-The first part of the milestone was to move the robot by using code. The general assembly of the movement by code remained the same as I had done for my first milestone, but I just needed to program it. The first part of the code involved using pin numbers in order to Initialize every pin that I used throughout the duration of the project. Then, I was able to learn about functions through C++ code through the move forward, right, left, and backwards. Certain  sections on the H-Bridge would correspond to these movements. Motor A is in charge of the left movements, while Motor B is in charge of right movements. Then, the wires on both motors correspond to one hub on the H-Bridge, which will either move it forwards or backwards. There are points where the robot may stop, in which every single motor’s hub is “LOW”, meaning that it is turned off. 
+### 🧠 Technical Explanation: Line Detector
 
+This part was the most complex. The line detector connects to:
+- **Pin 2** on the Arduino Uno
+- **5V and GND** on the breadboard
 
+The detector reads `1` when it detects a black line. I used the serial monitor to verify this behavior. Movement functions are triggered depending on whether the sensor reads a line or not.
 
+---
 
+### 🧩 Challenges Faced
 
-Technical Explanation of the speed calibration
-The second part of the second milestone was to be able to speed it up gradually by increments of five. There is a loop in the code, meaning that it will increase the code by 5 starting from 0 repeatedly until it reaches its ending point. The “i” is a variable that changes, and this is what is being increased. It is also an integer.  The overall pattern of i begins at 0 and increases by 5 and reaches its max at 255. This speed is important in the overall code and is actually mentioned later on when moving left and right because the robot spins around in the direction. 
+At first, I assumed the motors weren’t working, but after testing, I discovered the issue was a logic error in the `turnRight` function. I corrected the motor wiring logic by switching values for Motor B’s control pins, which fixed directional movement.
 
+---
 
-
-
-
-
-
-
-
-Technical Explanation of the line detector
-Unlike the other technical explanations which really just involved code and attaching the code this one is much more extensive, and hence, it took me a lot longer in order to complete this. There were three parts to the assembly due to there being three wire attachment points on the line detector module. The first wire’s attachment point is the Arduino Uno Board, and this attachment is Pin 2. Then the other attachment points are on the breadboard, and specifically they consist of the 5 Volts section and the GRD connectors. The 5 Volt connectors are important for the power and electrical current for the robot. The basic assembly for the line following robot connects the Line Tracking Module with Pin 2, and this is connected to the first unique line of  code for the line detector. In this project, I also learned about the serial monitor and how it is important to see if the code is working. When I used this, I was able to see the distinction between “1” and “0”. In the code, a “1” means that the line has been detected, and the computer will move in the appropriate direction such that it follows the path of the line. I also learned how to set a speed for the robot, and learned that getting slower speed might be more helpful. This code also uses functions, meaning that the move left and right functions are defined and then are also used spending on if the robot detects a line or not. 
-
-
-
-
-
-
-
-
-
-Challenges throughout this project
-For the line detector, I encountered some problems. First, when I set this, I believed that there were some issues in how straight the line was. However, after looking into the problem, I found out that there might be some issues with the motors spinning. But, after testing the motors with the Move by Code section’s code, I saw the motors were working. FInally, I saw that the primary issue was that the code was not working, and I saw that the  turn right function’s code for Motor B needed to be switched around. Instead of “speed”, I need to put “0”, and vice versa for the other one, and this was affecting the forwards and backwards movement of my robot when it detected a line. 
-
-
-
-
-
-
-
-
-
-# First Milestone
-
-
-
-
-
+## 🧪 First Milestone
 
 <div align="center">
   <iframe width="560" height="315"
     src="https://www.youtube.com/embed/zruteu_Ingk"
-    title="YouTube video player"
     frameborder="0"
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
     allowfullscreen>
   </iframe>
 </div>
 
+For this milestone, I assembled the hardware. I had challenges with a broken motor and wheel, but was able to flip the motor around to reuse it. After wiring the L9110 module and Arduino to the breadboard, the robot initially spun in circles due to an unstable obstacle avoidance module.
 
+Eventually, by swapping motor wire positions, both wheels moved correctly and I could successfully control the robot with basic code.
 
-When beginning working toward my first milestone, I attached every component on. Some challenges with this was that one of the pieces of the motor broke off, and I thought that I had to get a new motor. This then also made me think I had to get some new wheels because one of the wheels had a piece of the motor inside.  To solve this problem, I just flipped the motor around so that it could still be used, and I was able to use two identical wheels instead. Then, I had to begin attaching some of the wires. First, I started by attaching the motor’s wires to the L9110 module. This would ensure that the wheels would rotate in the correct direction. Next, I attached the Ground and 5 Volt sections from the Arduino Uno board into the breadboard. This was an important step because it would ensure that the other components were connected to the Ground and the battery. Then, I took the same module the motors were attached to and attached all of the parts to the breadboard. Some of the parts were attached on one side (which was all connected to the Ground), and then some of the parts were connected to the other side, which was connected to the 5 volt connector. The next step of the process was testing and debugging the overall code. When testing it, the robot would first just start to spin around in some circles. The reason this was occurring was because the obstacle avoidance module was not secure, and it was instead spinning that module around, which caused this issue. However, even after securing this module, the robot behaved similarly. So, I then changed some of the wiring on the motors, after which I saw the right wheel moved forward, and the left wheel moved backward. So, I switched the position of the left motor’s wires. Then, after that, both wheels started moving backward. Finally, the robot started behaving as expected and I had finished moving it by code. For my next milestone, I hope to be able to move the robot by using code. Specifically, I would use the Arduino app and would attach my robot to this app in order to allow it move. 
+---
 
-Below is a schematic which explains how the different components connect to each other when using a wire to connect such components. The component include batteries, breadboard, arduino board, and more. 
+### 🔌 Wiring Schematic
 
-<img src="https://raw.githubusercontent.com/29asangoi/Anish_BlueStampPortfolio/gh-pages/Screen%20Shot%202025-06-25%20at%209.05.49%20AM.png" alt="Screenshot">
+Below is a visual of how different components like the batteries, Arduino, and breadboard connect.
 
-# Schematics 
-Here's where you'll put images of your schematics. [Tinkercad](https://www.tinkercad.com/blog/official-guide-to-tinkercad-circuits) and [Fritzing](https://fritzing.org/learning/) are both great resoruces to create professional schematic diagrams, though BSE recommends Tinkercad becuase it can be done easily and for free in the browser. 
+<img src="https://raw.githubusercontent.com/29asangoi/Anish_BlueStampPortfolio/gh-pages/Screen%20Shot%202025-06-25%20at%209.05.49%20AM.png" alt="Schematic">
 
-# Starter Project
-<iframe width="560" height="315" src="https://www.youtube.com/embed/xZFvOUwT63U" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+---
 
+<!--
+# Schematics
 
-For my starter project, I chose the Weevil Eye project. This was because it would allow me to develop a deeper understanding of sensors and how they work. Additionally, this allowed me to become better at soldering because I was tasked throuhgout this project to do a lot of soldering with the different components that was required. However, I soon learned that another alternative to soldering was using a breadboard to connect the different components together. 
-There were some challenges in attaching the LED components because I was not sure about the placement of the legs (both short and long). So, I had to restart the project, but I worked quickly and was able to get it to work. The sensor does not quite work consistently, but if it is dark, then it will work more consistently. 
+Add custom diagrams from Tinkercad or Fritzing here if needed
+-->
 
-<img src="Screen%20Shot%202025-06-23%20at%208.42.30%20AM.png" alt="Screenshot">
+---
 
-# Code
-Here's where you'll put your code. The syntax below places it into a block of code. Follow the guide [here]([url](https://www.markdownguide.org/extended-syntax/)) to learn how to customize it to your project needs. 
+## 🚀 Starter Project
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/xZFvOUwT63U" frameborder="0" allowfullscreen></iframe>
+
+For my starter project, I chose the **Weevil Eye**. It helped me learn about sensors and improve soldering skills. I initially struggled with LED leg orientation and had to restart, but eventually succeeded. The sensor is more consistent in darker environments.
+
+<img src="Screen%20Shot%202025-06-23%20at%208.42.30%20AM.png" alt="Weevil Eye">
+
+---
+
+## 💻 Code
+
+Here's a basic starter snippet. Replace with your full robot code later.
 
 ```c++
 void setup() {
-  // put your setup code here, to run once:
   Serial.begin(9600);
   Serial.println("Hello World!");
 }
 
 void loop() {
-  // put your main code here, to run repeatedly:
-
+  // Code for robot behavior
 }
-```
 
 # Bill of Materials
 Below I list the project materials for the project. Most of the supplies that I used are attached in the kit
