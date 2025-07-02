@@ -47,7 +47,16 @@ The robot's movement uses C++ functions to go forward, backward, left, and right
 
 ###  Technical Explanation: Speed Calibration
 
-Using a `for` loop, the robot increases speed from 0 to 255 in increments of 5. This change is controlled using an integer variable `i`, and is important when rotating the robot to adjust turning responsiveness.
+Using a `for` loop, the robot increases speed from 0 to 255 in increments of 5. This change is controlled using an integer variable `i`, and is important when rotating the robot to adjust turning responsiveness. 
+
+Here is a wiring diagram for the speed calibration
+
+<h2>Detailed Wiring Diagram for Speed Calibration - SunFounder Human Following Robot</h2>
+
+<img src="https://raw.githubusercontent.com/29asangoi/Anish_BlueStampPortfolio/gh-pages/Screen%20Shot%202025-06-25%20at%209.05.49%20AM.png" 
+     alt="SunFounder Human Following Robot Wiring Diagram" 
+     width="800" 
+     style="max-width:100%; height:auto; display:block; margin: 0 auto;">
 
 ---
 
@@ -61,7 +70,12 @@ The detector reads `1` when it detects a black line. I used the serial monitor t
 
 Here you can see a more visual representation of the line detector code.
 
-<img src="https://docs.sunfounder.com/projects/picar-s/en/latest/_images/linefollow_2_wiring.png" alt="Detailed Wiring Diagram for SunFounder Line Following Robot" width="800">
+h2>Detailed Wiring Diagram for SunFounder Line Following Robot</h2>
+
+<img src="https://docs.sunfounder.com/projects/picar-s/en/latest/_images/linefollow_2_wiring.png" 
+     alt="Detailed Wiring Diagram for SunFounder Line Following Robot" 
+     width="800" 
+     style="max-width:100%; height:auto; display:block; margin: 0 auto;">
 
 ---
 
@@ -69,9 +83,6 @@ Here you can see a more visual representation of the line detector code.
 
 At first, I assumed the motors weren’t working, but after testing, I discovered the issue was a logic error in the `turnRight` function. I corrected the motor wiring logic by switching values for Motor B’s control pins, which fixed directional movement.
 
----
-
-### Code Explanations 
 
 ---
 
@@ -98,7 +109,7 @@ Below is a visual of how different components like the batteries, Arduino, and b
 <img src="https://raw.githubusercontent.com/29asangoi/Anish_BlueStampPortfolio/gh-pages/Screen%20Shot%202025-06-25%20at%209.05.49%20AM.png" alt="Schematic">
 
 ---
-### Code Explanations 
+## Code Explanations 
 
 
 <table>
