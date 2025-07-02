@@ -27,7 +27,7 @@ What if you could have a robot that follows you around effortlessly without your
 
 ---
 
-## 🛠️ Second Milestone
+## Second Milestone
 
 <iframe width="640" height="360" src="https://youtu.be/X0dyLCp5_js" frameborder="0" allowfullscreen></iframe>
 
@@ -39,13 +39,13 @@ In this video, the robot starts at a base speed and increases speed with a short
 
 ---
 
-### 🔧 Technical Explanation: Movement by Code
+###  Technical Explanation: Movement by Code
 
 The robot's movement uses C++ functions to go forward, backward, left, and right. Motor A controls left-side movement and Motor B controls the right. The H-Bridge controls current flow. To stop the robot, all H-Bridge outputs are set to `LOW`.
 
 ---
 
-### ⚙️ Technical Explanation: Speed Calibration
+###  Technical Explanation: Speed Calibration
 
 Using a `for` loop, the robot increases speed from 0 to 255 in increments of 5. This change is controlled using an integer variable `i`, and is important when rotating the robot to adjust turning responsiveness.
 
@@ -61,13 +61,13 @@ The detector reads `1` when it detects a black line. I used the serial monitor t
 
 ---
 
-### 🧩 Challenges Faced
+### Challenges Faced
 
 At first, I assumed the motors weren’t working, but after testing, I discovered the issue was a logic error in the `turnRight` function. I corrected the motor wiring logic by switching values for Motor B’s control pins, which fixed directional movement.
 
 ---
 
-## 🧪 First Milestone
+## First Milestone
 
 <div align="center">
   <iframe width="560" height="315"
@@ -83,7 +83,7 @@ Eventually, by swapping motor wire positions, both wheels moved correctly and I 
 
 ---
 
-### 🔌 Wiring Schematic
+### Wiring Schematic
 
 Below is a visual of how different components like the batteries, Arduino, and breadboard connect.
 
@@ -99,7 +99,7 @@ Add custom diagrams from Tinkercad or Fritzing here if needed
 
 ---
 
-## 🚀 Starter Project
+## Starter Project
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/xZFvOUwT63U" frameborder="0" allowfullscreen></iframe>
 
@@ -109,19 +109,128 @@ For my starter project, I chose the **Weevil Eye**. It helped me learn about sen
 
 ---
 
-## 💻 Code
+## 💻 Code Explanation Charts
+<h2>Code Explanation Table</h2>
 
-Here's a basic starter snippet. Replace with your full robot code later.
+<table border="1" cellpadding="10">
+  <thead>
+    <tr>
+      <th>Code</th>
+      <th>What it Means</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        const int A_1B = 5;<br>
+        const int A_1A = 6;<br>
+        const int B_1B = 9;<br>
+        const int B_1A = 10;<br><br>
+        const int lineTrack = 2;
+      </td>
+      <td>
+        This is the very beginning of the code where all pins are defined.<br>
+        The first four lines connect Arduino pins to the H-Bridge motor driver.<br>
+        The last line assigns pin 2 for the line tracking sensor input.
+      </td>
+    </tr>
+    
+    <tr>
+      <td>
+        void setup() {<br>
+        &nbsp;&nbsp;Serial.begin(9600);
+      </td>
+      <td>
+        The <code>setup()</code> function runs once to initialize the system.<br>
+        <code>Serial.begin(9600)</code> sets up communication between the Arduino and your computer at 9600 baud rate.
+      </td>
+    </tr>
 
-```c++
-void setup() {
-  Serial.begin(9600);
-  Serial.println("Hello World!");
-}
+    <tr>
+      <td>
+        //motor<br>
+        pinMode(A_1B, OUTPUT);<br>
+        pinMode(A_1A, OUTPUT);<br>
+        pinMode(B_1B, OUTPUT);<br>
+        pinMode(B_1A, OUTPUT);<br>
+        //line track<br>
+        pinMode(lineTrack, INPUT);
+      </td>
+      <td>
+        Sets motor pins as OUTPUT so they can send signals to the motors.<br>
+        Sets the line tracking sensor pin as INPUT to receive data from the sensor.
+      </td>
+    </tr>
 
-void loop() {
-  // Code for robot behavior
-}
+    <tr>
+      <td>
+        void loop() {<br>
+        &nbsp;&nbsp;int speed = 150;
+      </td>
+      <td>
+        This is the main loop that repeats continuously.<br>
+        Sets the robot's motor speed to 150 (range is 0 to 255).
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        int lineColor = digitalRead(lineTrack);<br>
+        Serial.println(lineColor);
+      </td>
+      <td>
+        Reads the line tracking sensor:<br>
+        <code>0</code> = no line detected (white surface)<br>
+        <code>1</code> = line detected (black surface)<br>
+        The result is printed in the Serial Monitor.
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        if (lineColor) {<br>
+        &nbsp;&nbsp;moveLeft(speed);<br>
+        } else {<br>
+        &nbsp;&nbsp;moveRight(speed);<br>
+        }
+      </td>
+      <td>
+        If a line is detected (value is 1), the robot moves left.<br>
+        Otherwise (value is 0), it moves right.
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        void moveLeft(int speed) {<br>
+        &nbsp;&nbsp;analogWrite(A_1B, 0);<br>
+        &nbsp;&nbsp;analogWrite(A_1A, speed);<br>
+        &nbsp;&nbsp;analogWrite(B_1B, 0);<br>
+        &nbsp;&nbsp;analogWrite(B_1A, 0);<br>
+        }
+      </td>
+      <td>
+        Moves the robot to the left by running Motor A forward while stopping Motor B.
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        void moveRight(int speed) {<br>
+        &nbsp;&nbsp;analogWrite(A_1B, 0);<br>
+        &nbsp;&nbsp;analogWrite(A_1A, 0);<br>
+        &nbsp;&nbsp;analogWrite(B_1B, speed);<br>
+        &nbsp;&nbsp;analogWrite(B_1A, 0);<br>
+        }
+      </td>
+      <td>
+        Moves the robot to the right by running Motor B forward while stopping Motor A.
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+
 
 # Bill of Materials
 Below I list the project materials for the project. Most of the supplies that I used are attached in the kit
