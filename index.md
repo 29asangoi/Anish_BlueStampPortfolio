@@ -124,7 +124,7 @@ For my starter project, I chose the **Weevil Eye**. It helped me learn about sen
 ---
 # Code Explanantions
 
-
+const int A_1A = 5
 const int A_1A = 6;
 const int B_1A = 9;
 const int B_1B = 10;</pre></td>
