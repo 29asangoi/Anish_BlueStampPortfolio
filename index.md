@@ -51,7 +51,7 @@ Using a `for` loop, the robot increases speed from 0 to 255 in increments of 5. 
 
 ---
 
-### 🧠 Technical Explanation: Line Detector
+### Technical Explanation: Line Detector
 
 This part was the most complex. The line detector connects to:
 - **Pin 2** on the Arduino Uno
@@ -59,11 +59,19 @@ This part was the most complex. The line detector connects to:
 
 The detector reads `1` when it detects a black line. I used the serial monitor to verify this behavior. Movement functions are triggered depending on whether the sensor reads a line or not.
 
+Here you can see a more visual representation of the line detector code.
+
+<img src="https://docs.sunfounder.com/projects/picar-s/en/latest/_images/linefollow_2_wiring.png" alt="Detailed Wiring Diagram for SunFounder Line Following Robot" width="800">
+
 ---
 
 ### Challenges Faced
 
 At first, I assumed the motors weren’t working, but after testing, I discovered the issue was a logic error in the `turnRight` function. I corrected the motor wiring logic by switching values for Motor B’s control pins, which fixed directional movement.
+
+---
+
+### Code Explanations 
 
 ---
 
@@ -90,7 +98,124 @@ Below is a visual of how different components like the batteries, Arduino, and b
 <img src="https://raw.githubusercontent.com/29asangoi/Anish_BlueStampPortfolio/gh-pages/Screen%20Shot%202025-06-25%20at%209.05.49%20AM.png" alt="Schematic">
 
 ---
+### Code Explanations 
 
+
+<table>
+  <thead>
+    <tr>
+      <th>Code</th>
+      <th>What it Means</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+<pre><code>const int A_1B = 5;
+const int B_1B = 9;
+const int B_1A = 10;</code></pre>
+      </td>
+      <td>Initializes every pin that I used throughout the duration of the project. These are pins 5, 6, 9, and 10 and they all appear on the Arduino Uno board.</td>
+    </tr>
+    <tr>
+      <td>
+<pre><code>void setup() {
+  pinMode(A_1A, OUTPUT);
+  pinMode(B_1A, OUTPUT);
+  pinMode(A_1B, OUTPUT);
+  pinMode(B_1B, OUTPUT);
+}</code></pre>
+      </td>
+      <td>The second set explains how on the L9110 module there are the pins (like A_1B). These pins are in the output for the pins. The input of these pins are located in their respective location in the Arduino Uno board.</td>
+    </tr>
+    <tr>
+      <td>
+<pre><code>void moveForward() {
+  digitalWrite(A_1A, LOW);
+  digitalWrite(B_1A, HIGH);
+  digitalWrite(A_1B, LOW);
+  digitalWrite(B_1B, LOW);
+}</code></pre>
+      </td>
+      <td>The "LOW" that is shown means that that section will not be activated.
+The "HIGH" that is shown represents an activation in the move forward code.</td>
+    </tr>
+    <tr>
+      <td>
+        <p>...</p>
+      </td>
+      <td>For the move forward section, it means that</td>
+    </tr>
+    <tr>
+      <td>
+<pre><code>const int A_1B = 5;
+const int A_1A = 6;
+const int B_1B = 9;
+const int B_1A = 10;
+const int lineTrack = 2;</code></pre>
+      </td>
+      <td>This is the very beginning of the code, which means that all of the pins have to be set up.
+The first four lines connect the pins on the Arduino Uno board to the H-Bridge hubs, as explained earlier.
+The last line works differently, but it does involve setting up all the pins. But, the basic assembly of the line following section connects the Line Tracking Module with Pin 2.</td>
+    </tr>
+    <tr>
+      <td>
+<pre><code>void setup() {
+  Serial.begin(9600);
+}</code></pre>
+      </td>
+      <td>This line involves the setup, where everything needs to be defined.
+The Serial begin code allows for a smoother connection between the USB and the</td>
+    </tr>
+    <tr>
+      <td>
+<pre><code>void moveBackward() {
+  digitalWrite(A_1A, HIGH);
+  digitalWrite(A_1B, LOW);
+  digitalWrite(B_1A, HIGH);
+  digitalWrite(B_1B, LOW);
+}</code></pre>
+      </td>
+      <td>The motor will only move a certain direction, in this case it is forward so the A_1A and the B_1A sections on the L9110 module.
+For the move backward section, it means that the motor will only move a certain direction, in this case it is backward and the A_1B and the B_1A sections on the L9110 module.</td>
+    </tr>
+    <tr>
+      <td>
+<pre><code>void turnRight() {
+  digitalWrite(A_1A, HIGH);
+  digitalWrite(A_1A, LOW);
+  digitalWrite(B_1B, HIGH);
+  digitalWrite(B_1A, LOW);
+}</code></pre>
+      </td>
+      <td>The "LOW" that is shown means that that section will not be activated
+The "HIGH" that is shown represents an activation in the move forward code.
+For the move right section, it means that the motor will only move a certain direction, in this case it is right and the A_1B and the B_1B sections on the L9110 module.</td>
+    </tr>
+    <tr>
+      <td>
+<pre><code>void turnLeft() {
+  digitalWrite(A_1B, LOW);
+  digitalWrite(A_1A, HIGH);
+  digitalWrite(B_1A, HIGH);
+  digitalWrite(B_1B, LOW);
+}</code></pre>
+      </td>
+      <td>For the move left section, it means that the motor will only move a certain direction, in this case it is left and the A_1A and the B_1A sections on the L9110 module.</td>
+    </tr>
+    <tr>
+      <td>
+<pre><code>void stopMove() {
+  digitalWrite(A_1A, LOW);
+  digitalWrite(A_1A, LOW);
+  digitalWrite(B_1B, LOW);
+  digitalWrite(B_1B, LOW);
+}</code></pre>
+      </td>
+      <td>This is the most simple piece of code and the most important. This is because in function is to set each pin to LOW, meaning that none of the pins will be activated and this will allow for the robot to stop moving.</td>
+    </tr>
+  </tbody>
+</table>
 
 ---
 
@@ -103,126 +228,6 @@ For my starter project, I chose the **Weevil Eye**. It helped me learn about sen
 <img src="Screen%20Shot%202025-06-23%20at%208.42.30%20AM.png" alt="Weevil Eye">
 
 ---
-
-## 💻 Code Explanation Charts
-<h2>Code Explanation Table</h2>
-
-<table border="1" cellpadding="10" cellspacing="0" style="border-collapse: collapse; width: 100%;">
-  <thead style="background-color: #f2f2f2;">
-    <tr>
-      <th style="text-align: left;">Code</th>
-      <th style="text-align: left;">What It Means</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>
-        const int A_1B = 5;<br>
-        const int A_1A = 6;<br>
-        const int B_1B = 9;<br>
-        const int B_1A = 10;<br><br>
-        const int lineTrack = 2;
-      </td>
-      <td>
-        These lines define constants that map Arduino digital pins to motor and sensor connections.<br>
-        The first four lines are outputs to the H-Bridge motor driver.<br>
-        The last line assigns pin 2 to the line tracking sensor input.
-      </td>
-    </tr>
-
-    <tr>
-      <td>
-        void setup() {<br>
-        &nbsp;&nbsp;Serial.begin(9600);
-      </td>
-      <td>
-        The <code>setup()</code> function runs once at the start.<br>
-        <code>Serial.begin(9600)</code> enables serial communication for debugging at 9600 baud.
-      </td>
-    </tr>
-
-    <tr>
-      <td>
-        pinMode(A_1B, OUTPUT);<br>
-        pinMode(A_1A, OUTPUT);<br>
-        pinMode(B_1B, OUTPUT);<br>
-        pinMode(B_1A, OUTPUT);<br>
-        pinMode(lineTrack, INPUT);
-      </td>
-      <td>
-        These lines define each pin’s mode:<br>
-        Motor control pins are set as <code>OUTPUT</code> to send signals.<br>
-        The line sensor pin is set as <code>INPUT</code> to receive data.
-      </td>
-    </tr>
-
-    <tr>
-      <td>
-        void loop() {<br>
-        &nbsp;&nbsp;int speed = 150;
-      </td>
-      <td>
-        The <code>loop()</code> function runs repeatedly.<br>
-        <code>speed = 150</code> sets the robot's motor speed (range: 0–255).
-      </td>
-    </tr>
-
-    <tr>
-      <td>
-        int lineColor = digitalRead(lineTrack);<br>
-        Serial.println(lineColor);
-      </td>
-      <td>
-        Reads the sensor value from <code>lineTrack</code>:<br>
-        <code>0</code> = white (no line detected),<br>
-        <code>1</code> = black (line detected).<br>
-        Prints result to Serial Monitor for debugging.
-      </td>
-    </tr>
-
-    <tr>
-      <td>
-        if (lineColor) {<br>
-        &nbsp;&nbsp;moveLeft(speed);<br>
-        } else {<br>
-        &nbsp;&nbsp;moveRight(speed);<br>
-        }
-      </td>
-      <td>
-        If a line is detected (<code>lineColor == 1</code>), the robot moves left.<br>
-        Otherwise, it moves right.
-      </td>
-    </tr>
-
-    <tr>
-      <td>
-        void moveLeft(int speed) {<br>
-        &nbsp;&nbsp;analogWrite(A_1B, 0);<br>
-        &nbsp;&nbsp;analogWrite(A_1A, speed);<br>
-        &nbsp;&nbsp;analogWrite(B_1B, 0);<br>
-        &nbsp;&nbsp;analogWrite(B_1A, 0);<br>
-        }
-      </td>
-      <td>
-        Moves the robot left by activating Motor A forward and keeping Motor B off.
-      </td>
-    </tr>
-
-    <tr>
-      <td>
-        void moveRight(int speed) {<br>
-        &nbsp;&nbsp;analogWrite(A_1B, 0);<br>
-        &nbsp;&nbsp;analogWrite(A_1A, 0);<br>
-        &nbsp;&nbsp;analogWrite(B_1B, speed);<br>
-        &nbsp;&nbsp;analogWrite(B_1A, 0);<br>
-        }
-      </td>
-      <td>
-        Moves the robot right by activating Motor B forward and keeping Motor A off.
-      </td>
-    </tr>
-  </tbody>
-</table>
 
 
 
