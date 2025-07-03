@@ -4,7 +4,7 @@ What if you could have a robot that follows you around effortlessly without your
 Imagine the greater possiblities of being able to use your robot as a pet, only that it only requires some battery power! I hope to update this project as well in order to expand these possiblites.
 
 
-| Anish S.      | Stratford School | Computer Science | Incoming Freshman
+| Anish S.| Stratford School | Computer Science | Incoming Freshman| Human Following Robot|
 
 ---
 
