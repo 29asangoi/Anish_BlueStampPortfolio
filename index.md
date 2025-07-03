@@ -9,7 +9,7 @@ Imagine the greater possiblities of being able to use your robot as a pet, only 
 ---
 
 
-<img src="AnishS_(2).jpg" width="200" alt="Anish" />
+<img src="AnishS_(2).jpg" width="400" alt="Anish" />
 ![AnishS_(2).jpg](https://github.com/29asangoi/Anish_BlueStampPortfolio/blob/gh-pages/AnishS_(2).jpg?raw=true)
 
 ---
