@@ -10,7 +10,7 @@ Imagine the greater possiblities of being able to use your robot as a pet, only 
 
 
 <img src="AnishS_(2).jpg" width="400" alt="Anish" />
-![AnishS_(2).jpg](https://github.com/29asangoi/Anish_BlueStampPortfolio/blob/gh-pages/AnishS_(2).jpg?raw=true)
+
 
 ---
 
@@ -160,7 +160,6 @@ Below I list the project materials for the project. Most of the supplies that I 
 
 # Code Explanantions
 
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -226,7 +225,7 @@ Below I list the project materials for the project. Most of the supplies that I 
 
    
 
-    <h2>1. Arduino Code and Explanations</h2>
+    <h2>1. Move by Code Explanantions</h2>
     <table>
         <thead>
             <tr>
@@ -330,6 +329,109 @@ delay(500);</pre></td>
 
 </body>
 </html>
+
+<html>
+<head>
+<style>
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+  }
+  th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+  }
+  th {
+    background-color: #f2f2f2;
+  }
+  pre {
+    background-color: #eee;
+    padding: 10px;
+    border-radius: 5px;
+    overflow-x: auto;
+  }
+</style>
+</head>
+<body>
+
+<h1>Code Explanation</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Code</th>
+      <th>What it Means</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><pre>void loop() {</pre></td>
+      <td>This is a loop, meaning that it will increase</td>
+    </tr>
+    <tr>
+      <td><pre>for(int i=0;i&lt;=255;i+=5){
+  moveForward(i);
+  delay(500);
+}</pre></td>
+      <td>
+        <p>The code by 5 starting from 0 repeatedly until it reaches its ending point. The "i" is a variable that changes, and this is what is being increased. "i" is also an integer.</p>
+        <p>Pattern of i - 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, .... 245, 250, 255</p>
+        <p>The greater the number, the faster the speed will be.</p>
+        <p>The delay (500) means that it will go for ½ a second after <strong>each</strong> increase in speed. Each increase in speed indicates a change in the variable i.</p>
+      </td>
+    </tr>
+    <tr>
+      <td><pre>for(int i=255;i>=0;i-=5){
+  moveForward(i);
+  delay(500);
+}</pre></td>
+      <td>
+        <p>This is a continuation of the other loop, and this changes by decreases of 5 and it starts from 255 and keeps decreasing. Again, it acts as an integer.</p>
+        <p>Pattern of i - 255, 250, 245, 240, 235, 230, ... 10, 5, 0</p>
+        <p>The greater the number, the faster the speed</p>
+        <p>The delay applies to the same, but occurs on each <strong>decrease</strong> in speed, which also affects the variable i.</p>
+      </td>
+    </tr>
+    <tr>
+      <td><pre>void moveForward(int speed) {
+  analogWrite(A_1B, 0);
+  analogWrite(A_1A, speed);
+  analogWrite(B_1B, speed);
+  analogWrite(B_1A, 0);
+}</pre></td>
+      <td>
+        <p>This is a <strong>function</strong> that will allow the motors to rotate and it works with the loop. Specifically, this works with the green hubs in the H-Bridge, which is located in the L9110 module.</p>
+        <p>The "0" indicates that the section will stay put and will not be activated.</p>
+        <p>The "speed" is a little more complicated, but not hard to understand. This will adjust based on the speed which has been provided in the loop (which is explained earlier). Thus, this function will constantly be adjusted based on the signals provided from the loop to the robot. Additionally, "int" is referring to the variable "i", which was used earlier.</p>
+      </td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><p>This code will actually allow the changes above to be implemented on the robot.</p>
+      <p>The hubs that are marked with "speed" indicate specifically marked with that because as described it explains that it is the hubs that are specifically connected to to the motor that are designed to move the robot forwards.</p></td>
+    </tr>
+    <tr>
+      <td><pre>for (initialization; condition; increment) {
+  // statement(s);
+}</pre></td>
+      <td>Use these lines in order to make the conditions work and check each iteration during, before, and after.</td>
+    </tr>
+  </tbody>
+</table>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
 
 
 
