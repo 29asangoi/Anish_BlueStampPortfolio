@@ -637,7 +637,7 @@ Serial.println(lineColor); //print on the serial monitor</pre></td>
       <td>
         <ol>
           <li><strong>"HIGH"</strong> - This to the computer means "1", meaning that the component to which the high value is assigned will activate.</li>
-          <li><strong>"HIGH"</strong> - This to the computer means "0", meaning that the component to which the high value is assigned will not activate.</li>
+          <li><strong>"LOW"</strong> - This to the computer means "0", meaning that the component to which the high value is assigned will not activate.</li>
         </ol>
       </td>
     </tr>
