@@ -566,27 +566,59 @@ Serial.println(lineColor); //print on the serial monitor</pre></td>
 </html>
 
 
+<!DOCTYPE html>
 <html>
 <head>
+<title>Robot Project Glossary and Components</title>
 <style>
+  body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    margin: 20px;
+  }
+  h1, h2 {
+    color: #0056b3;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 5px;
+    margin-top: 30px;
+  }
   table {
     width: 100%;
     border-collapse: collapse;
     margin-bottom: 20px;
+    box-shadow: 0 2px 3px rgba(0,0,0,0.1);
   }
   th, td {
     border: 1px solid #ddd;
-    padding: 8px;
+    padding: 10px;
     text-align: left;
+    vertical-align: top; /* Align content to the top */
   }
   th {
     background-color: #f2f2f2;
+    font-weight: bold;
+    color: #333;
+  }
+  tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  ol {
+    padding-left: 20px;
+  }
+  ul {
+    padding-left: 20px;
+  }
+  strong {
+    color: #c00;
   }
 </style>
 </head>
 <body>
 
-<h1>Glossary of Terms</h1>
+<h1>Robot Project Documentation</h1>
+
+<h2>Glossary of Terms</h2>
 
 <table>
   <thead>
@@ -640,32 +672,7 @@ Serial.println(lineColor); //print on the serial monitor</pre></td>
   </tbody>
 </table>
 
-</body>
-</html>
-
-
-
-<html>
-<head>
-<style>
-  table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-bottom: 20px;
-  }
-  th, td {
-    border: 1px solid #ddd;
-    padding: 8px;
-    text-align: left;
-  }
-  th {
-    background-color: #f2f2f2;
-  }
-</style>
-</head>
-<body>
-
-<h1>Components and Their Functions</h1>
+<h2>Components and Their Functions</h2>
 
 <table>
   <thead>
