@@ -60,6 +60,13 @@ Here is a wiring diagram for the speed calibration
      width="800" 
      style="max-width:100%; height:auto; display:block; margin: 0 auto;">
 
+
+     
+
+Here is the wiring diagram for the line detector module attachment.
+
+
+
 ![Screenshot](https://github.com/29asangoi/Anish_BlueStampPortfolio/raw/gh-pages/Screen%20Shot%202025-07-03%20at%2012.12.10%20PM.png)
 
 ---
