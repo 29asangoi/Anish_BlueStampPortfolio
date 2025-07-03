@@ -74,12 +74,7 @@ Here you can see a more visual representation of the line detector code.
 
 <h6>Detailed Wiring Diagram for SunFounder Line Following Robot</h6>
 
-<img 
-  src="https://docs.sunfounder.com/projects/picar-s/en/latest/_images/linefollow_2_wiring.png" 
-  alt="Detailed Wiring Diagram for SunFounder Line Following Robot" 
-  style="max-width: 100%; height: auto; display: block; margin: 0 auto;" 
-/>
-
+[Detailed Wiring Diagram for SunFounder Line Following Robot](https://docs.sunfounder.com/projects/picar-s/en/latest/_images/linefollow_2_wiring.png)
 ---
 
 ### Challenges Faced
