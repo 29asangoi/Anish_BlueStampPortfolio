@@ -225,7 +225,7 @@ Below I list the project materials for the project. Most of the supplies that I 
 
    
 
-    <h2>1. Move by Code Explanantions</h2>
+    ## <h2>1. Move by Code Explanantions</h2>
     <table>
         <thead>
             <tr>
@@ -356,7 +356,7 @@ delay(500);</pre></td>
 </head>
 <body>
 
-<h1>Code Explanation</h1>
+## <h1>2. Speed Up Code Explanantions</h1>
 
 <table>
   <thead>
@@ -452,7 +452,7 @@ delay(500);</pre></td>
 </head>
 <body>
 
-<h1>Code Explanation</h1>
+## <h1>3. Follow the Line Code Explanantions</h1>
 
 <table>
   <thead>
