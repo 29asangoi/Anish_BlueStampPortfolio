@@ -60,6 +60,15 @@ Here is a wiring diagram for the speed calibration
      width="800" 
      style="max-width:100%; height:auto; display:block; margin: 0 auto;">
 
+<p align="center">
+  <img 
+    src="https://raw.githubusercontent.com/29asangoi/Anish_BlueStampPortfolio/gh-pages/Screen%20Shot%202025-06-25%20at%209.05.49%20AM.png" 
+    alt="SunFounder Human Following Robot Wiring Diagram" 
+    width="800" 
+    style="max-width: 100%; height: auto; display: block; margin: 0 auto;" 
+  />
+</p>
+
 ---
 
 ### Technical Explanation: Line Detector
