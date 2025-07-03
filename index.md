@@ -16,7 +16,7 @@ Imagine the greater possiblities of being able to use your robot as a pet, only 
 <!--
 # Final Milestone
 
-<iframe width="300" height="300" src="https://www.youtube.com/embed/F7M7imOVGug" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
+<iframe width="200" height="200" src="https://www.youtube.com/embed/F7M7imOVGug" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
 
 - What you've accomplished since your previous milestone
 - Biggest challenges and triumphs
