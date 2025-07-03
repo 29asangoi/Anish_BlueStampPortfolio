@@ -2,14 +2,14 @@
 
 What if you could have a robot that follows you around effortlessly without your control? Well, this summer that will be my task to build such a robot. Thus, this would be the general goal for the robot.
 Imagine the greater possiblities of being able to use your robot as a pet, only that it only requires some battery power! I hope to update this project as well in order to expand these possiblites
-
-| Anish S. | Stratford School | Computer Science | Incoming Freshman |
+| Engineer Name | School           | Area of Intrest  | Grade
+| Anish S.      | Stratford School | Computer Science | Incoming Freshman
 
 ---
 
 
 
-<img src="https://github.com/29asangoi/Anish_BlueStampPortfolio/raw/gh-pages/AnishS.HEIC" alt="AnishS" />
+![AnishS_(2).jpg](https://github.com/29asangoi/Anish_BlueStampPortfolio/blob/gh-pages/AnishS_(2).jpg?raw=true)
 
 ---
 
@@ -52,7 +52,7 @@ Using a `for` loop, the robot increases speed from 0 to 255 in increments of 5. 
 
 Here is a wiring diagram for the speed calibration
 
-<h2>Detailed Wiring Diagram for Speed Calibration - SunFounder Human Following Robot</h2>
+<h6>Detailed Wiring Diagram for Speed Calibration - SunFounder Human Following Robot</h6>
 
 <img src="https://raw.githubusercontent.com/29asangoi/Anish_BlueStampPortfolio/gh-pages/Screen%20Shot%202025-06-25%20at%209.05.49%20AM.png" 
      alt="SunFounder Human Following Robot Wiring Diagram" 
@@ -71,7 +71,7 @@ The detector reads `1` when it detects a black line. I used the serial monitor t
 
 Here you can see a more visual representation of the line detector code.
 
-h2>Detailed Wiring Diagram for SunFounder Line Following Robot</h2>
+<h6>Detailed Wiring Diagram for SunFounder Line Following Robot</h6>
 
 <img src="https://docs.sunfounder.com/projects/picar-s/en/latest/_images/linefollow_2_wiring.png" 
      alt="Detailed Wiring Diagram for SunFounder Line Following Robot" 
@@ -97,9 +97,16 @@ At first, I assumed the motors weren’t working, but after testing, I discovere
   </iframe>
 </div>
 
-For this milestone, I assembled the hardware. I had challenges with a broken motor and wheel, but was able to flip the motor around to reuse it. After wiring the L9110 module and Arduino to the breadboard, the robot initially spun in circles due to an unstable obstacle avoidance module.
+###  Technical Explanation: Assembly
+First, I began by attaching every component on. Some challenges with this was that one of the pieces of the motor broke off, and I thought that I had to get a new motor. This then also made me think I had to get some new wheels because one of the wheels had a piece of the motor inside.  To solve this problem, I just flipped the motor around so that it could still be used, and I was able to use two identical wheels instead. Then, I had to begin attaching some of the wires. First, I started by attaching the motor’s wires to the L9110 module. 
 
-Eventually, by swapping motor wire positions, both wheels moved correctly and I could successfully control the robot with basic code.
+This would ensure that the wheels would rotate in the correct direction. Next, I attached the Ground and 5 Volt sections from the Arduino Uno board into the breadboard. This was an important step because it would ensure that the other components were connected to the Ground and the battery. Then, I took the same module the motors were attached to and attached all of the parts to the breadboard. Some of the parts were attached on one side (which was all connected to the Ground), and then some of the parts were connected to the other side, which was connected to the 5 volt connector. 
+
+###  Technical Explanation: Debugging the Code
+The next step of the process was testing and debugging the overall code. When testing it, the robot would first just start to spin around in some circles. The reason this was occurring was because the obstacle avoidance module was not secure, and it was instead spinning that module around, which caused this issue. However, even after securing this module, the robot behaved similarly. So, I then changed some of the wiring on the motors, after which I saw the right wheel moved forward, and the left wheel moved backward. So, I switched the position of the left motor’s wires. Then, after that, both wheels started moving backward. Finally, the robot started behaving as expected and I had finished moving it by code. 
+
+###  Next Steps
+Next, I hope to be able to move the robot by using Arduino code, which would use the programming language C. I also hope to be able to increase the several applications that my robot might be able to do in the future. 
 
 ---
 
@@ -116,7 +123,9 @@ Below is a visual of how different components like the batteries, Arduino, and b
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/xZFvOUwT63U" frameborder="0" allowfullscreen></iframe>
 
-For my starter project, I chose the **Weevil Eye**. It helped me learn about sensors and improve soldering skills. I initially struggled with LED leg orientation and had to restart, but eventually succeeded. The sensor is more consistent in darker environments.
+For my starter project, I chose the **Weevil Eye**. It helped me learn about sensors and improve soldering skills. I initially struggled with LED leg orientation and had to restart. When I restarted, the process was a lot more simple because I understood what components were inccoled and what their specific roles were. While I have done projects that are battery powered, this project also introduced me to the idea of how to use a battery coin. For me, this was a lot more challenging because it was hard to take out the battery coin after it had been inserted. One issue that I did when I resarted is the placement of the sensor, which was not soldered in fully. The next time that I solder, I will ensure that all the components are soldered in fully without actually breaking thd compoennts.
+
+Below is a schematic, which explains the wiring of the overall assmebly and wirings of the Weevil Eyes. 
 
 <img src="Screen%20Shot%202025-06-23%20at%208.42.30%20AM.png" alt="Weevil Eye">
 
@@ -214,9 +223,7 @@ Below I list the project materials for the project. Most of the supplies that I 
 </head>
 <body>
 
-    <h1>Arduino Project Documentation</h1>
-
-    <p>This document combines the code explanations, terminology, and component functions for the Arduino Human-Following Robot project.</p>
+   
 
     <h2>1. Arduino Code and Explanations</h2>
     <table>
