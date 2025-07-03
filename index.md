@@ -225,7 +225,7 @@ Below I list the project materials for the project. Most of the supplies that I 
 
    
 
-    ## <h2>1. Move by Code Explanantions</h2>
+    <h2>1. Move by Code Explanantions</h2>
     <table>
         <thead>
             <tr>
