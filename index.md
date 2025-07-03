@@ -426,10 +426,292 @@ delay(500);</pre></td>
 
 
 
+<html>
+<head>
+<style>
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+  }
+  th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+  }
+  th {
+    background-color: #f2f2f2;
+  }
+  pre {
+    background-color: #eee;
+    padding: 10px;
+    border-radius: 5px;
+    overflow-x: auto;
+  }
+</style>
+</head>
+<body>
+
+<h1>Code Explanation</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Code</th>
+      <th>What it Means</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><pre>const int A_1A = 5;
+const int A_1B = 6;
+const int B_1B = 9;
+const int B_1A = 10;</pre></td>
+      <td>This is the very beginning of the code, which means that all of the pins have to be set up.</td>
+    </tr>
+    <tr>
+      <td><pre>const int lineTrack = 2;</pre></td>
+      <td>The first four lines connect the pins on the Arduino Uno Board to the H-Bridge hubs, as explained earlier.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>The last line works differently, but it does involve setting up all the pins. But, the basic assembly for the line following robot connects the Line Tracking Module with Pin 2.</td>
+    </tr>
+    <tr>
+      <td><pre>void setup() {
+  Serial.begin(9600);
+}</pre></td>
+      <td>
+        <p>This line involves the setup, where everything needs to be defined.</p>
+        <p>The Serial.begin code allows for a smoother connection between the USB and the computer. This can be used for sending messages or for fixing code (debugging).</p>
+        <p>Communication Speed = 9600 bits per second</p>
+      </td>
+    </tr>
+    <tr>
+      <td><pre>//Motor
+pinMode(A_1B, OUTPUT);
+pinMode(A_1A, OUTPUT);
+pinMode(B_1A, OUTPUT);
+pinMode(B_1B, OUTPUT);
+//Line track
+pinMode(lineTrack, INPUT);</pre></td>
+      <td>
+        <p>These lines of code follow the standard format/setup of <strong>pinMode (input, output)</strong></p>
+        <p>For the first four lines, which we have already used, the H-Bridge ports act as the output.</p>
+        <p>For the final line, the line tracking robot's job is to send an input signal to the microcontroller.</p>
+      </td>
+    </tr>
+    <tr>
+      <td><pre>void loop() {</pre></td>
+      <td>This code means that the void loop is starting</td>
+    </tr>
+    <tr>
+      <td><pre>int speed = 150;</pre></td>
+      <td>and this is the part that is going to be repeated multiple times.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>The int speed means that the code is setting up the motor speed will be 150 (the speed vary from 0 (not moving) to 255 (which is the maximum possible speed))</td>
+    </tr>
+    <tr>
+      <td><pre>int lineColor = digitalRead(lineTrack);
+// 0:white 1:black
+Serial.println(lineColor); //print on the serial monitor</pre></td>
+      <td>
+        <p>This line means that the computer is going to read the line track and is going to do it based on the color</p>
+        <ul>
+          <li>0 - indicates that the digital read will not activate at all, and since the color is white then it is "0"</li>
+          <li>1 - indicates that the digital read will activate, since the line has been detected</li>
+        </ul>
+        <p>Then this signal is shown to the serial monitor so we can always set up earlier. So you see what is detected.</p>
+      </td>
+    </tr>
+    <tr>
+      <td><pre>if (lineColor) {
+  moveLeft(speed);
+} else {
+  moveRight(speed);
+}</pre></td>
+      <td>
+        <p>The first line indicates if the line color equals 1, meaning that it essentially states "if line is detected". Then it moves right.</p>
+        <p>If the line color is 0 (since it is an else function and it can't mean anything else besides 0 at this point), then the robot will move right.</p>
+      </td>
+    </tr>
+    <tr>
+      <td><pre>void moveLeft(int speed) {
+  analogWrite(A_1B, 0);
+  analogWrite(A_1A, speed);
+  analogWrite(B_1B, 0);
+  analogWrite(B_1A, 0);
+}</pre></td>
+      <td>
+        <p>The move left function will only activate if a line is detected. Then, the certain motors (in this case Motor A marked by the L9110 module) will activate. For the right function, this activates if the robot does not detect a line, and works with Motor B.</p>
+        <p>The second line will stop Motor A to go in a reverse direction. The third line will allow the motor to go to a certain speed. This hub is what allows the robot to move at a certain speed.</p>
+        <p>The right section and the third line will stop</p>
+      </td>
+    </tr>
+    <tr>
+      <td><pre>void moveRight(int speed) {
+  analogWrite(A_1B, 0);
+  analogWrite(A_1A, 0);
+  analogWrite(B_1B, speed);
+  analogWrite(B_1A, 0);
+}</pre></td>
+      <td>Motor B to go in a reverse direction. The third line will allow the motor to go to a certain speed. This hub is what allows the robot to move at a certain speed.</td>
+    </tr>
+  </tbody>
+</table>
+
+</body>
+</html>
+
+
+<html>
+<head>
+<style>
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+  }
+  th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+  }
+  th {
+    background-color: #f2f2f2;
+  }
+</style>
+</head>
+<body>
+
+<h1>Glossary of Terms</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Term</th>
+      <th>What it Means</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>pin</td>
+      <td>For the human-following robot, the "pin" term refers to the Arduino R3 board that the wires are connected to. On the right side, there are some numbers from 0-13. In this case, "pin" refers to any of these numbers.</td>
+    </tr>
+    <tr>
+      <td>value</td>
+      <td>
+        <ol>
+          <li><strong>"HIGH"</strong> - This to the computer means "1", meaning that the component to which the high value is assigned will activate.</li>
+          <li><strong>"HIGH"</strong> - This to the computer means "0", meaning that the component to which the high value is assigned will not activate.</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td>(pin, value)</td>
+      <td>These two terms above are referring to the (pin, value) format used in the code</td>
+    </tr>
+    <tr>
+      <td>pin</td>
+      <td>For the human-following robot, the "pin" term refers to the Arduino R3 board that the wires are connected to. On the right side, there are some numbers from 0-13. In this case, "pin" refers to any of these numbers. This however refers to what mode the pin is being set to.</td>
+    </tr>
+    <tr>
+      <td>mode</td>
+      <td>Refers to INPUT -> What is being plugged into <br> Refers to OUTPUT</td>
+    </tr>
+    <tr>
+      <td>for</td>
+      <td>Used to repeat a certain amount of statements. Important: These statements <strong>must</strong> be in the curly braces. (see last code term for more information)</td>
+    </tr>
+    <tr>
+      <td>initialization</td>
+      <td>Will always be one of the first things to happen in the loop. This occurs <strong>once</strong> throughout the entire loop.</td>
+    </tr>
+    <tr>
+      <td>condition</td>
+      <td>This is what is tested throughout the loop. If true -> executed. If it is false, then the loop ends.</td>
+    </tr>
+    <tr>
+      <td>increment</td>
+      <td>Always goes through each time if the condition (as described earlier) is true. s</td>
+    </tr>
+  </tbody>
+</table>
+
+</body>
+</html>
 
 
 
+<html>
+<head>
+<style>
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+  }
+  th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+  }
+  th {
+    background-color: #f2f2f2;
+  }
+</style>
+</head>
+<body>
 
+<h1>Components and Their Functions</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Component/Attachment Part</th>
+      <th>Function (Applies to the motor direction)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>A_1A</td>
+      <td>Can move forward and left</td>
+    </tr>
+    <tr>
+      <td>A_1B</td>
+      <td>Can move backward and right</td>
+    </tr>
+    <tr>
+      <td>B_1A</td>
+      <td>Can move backward and left</td>
+    </tr>
+    <tr>
+      <td>B_1B</td>
+      <td>Can move forward and right</td>
+    </tr>
+    <tr>
+      <td>A Hub (before the underscore)</td>
+      <td>Indicates forward and backward motion</td>
+    </tr>
+    <tr>
+      <td>B Hub (before the underscore)</td>
+      <td>Indicates the forward and backward motion</td>
+    </tr>
+    <tr>
+      <td>1A Hub</td>
+      <td>Indicates left and right motion</td>
+    </tr>
+    <tr>
+      <td>1B Hub</td>
+      <td>Indicates left and right motion</td>
+    </tr>
+  </tbody>
+</table>
+
+</body>
+</html>
 
 
 
