@@ -1,8 +1,9 @@
 # Human-Following Robot
 
 What if you could have a robot that follows you around effortlessly without your control? Well, this summer that will be my task to build such a robot. Thus, this would be the general goal for the robot.
-Imagine the greater possiblities of being able to use your robot as a pet, only that it only requires some battery power! I hope to update this project as well in order to expand these possiblites
-| Engineer Name | School           | Area of Intrest  | Grade
+Imagine the greater possiblities of being able to use your robot as a pet, only that it only requires some battery power! I hope to update this project as well in order to expand these possiblites.
+
+
 | Anish S.      | Stratford School | Computer Science | Incoming Freshman
 
 ---
