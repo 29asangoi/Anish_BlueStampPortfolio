@@ -34,13 +34,6 @@ The first section of my final milestone involving making an obstacle avoidance m
 
 For the code, if the robot's obstacle avoidance modules do not face any obstacles, its natural behavior is to move forward. However, when I first tested this out the robot would have one motor move forwards and one move backwards, so I was able to change this so that the robot would move normally. Another challenge that I faced was that sometimes the back left and the back right functions were not working, despite activating the H-Bridge hubs that were supposed to be activating those sections. So, in order to solve this problem I was able to go back to some older code and found out that there the back left and back right functions were actually working. Another issue that I ran into was that the obstacle avoidance modules were not properly working, so I had to replace these modules in order to allow them to properly function. Finally, after much debugging and rengineering I was able to get my obstacle avoidance modules to function properly. 
 
-Below is a schmatic that explains the obstacle avoidance module and a little more about how it works. 
-
- <img src="https://docs.sunfounder.com/projects/3in1-kit-v2/_images/car_ir_obstacle_wiring_diagram.png" alt="Wiring diagram for the SunFounder car project with IR obstacle avoidance">
-
-
-
-
 
 ---
 
@@ -589,7 +582,7 @@ Serial.println(lineColor); //print on the serial monitor</pre></td>
 </html>
 
 
-<!DOCTYPE html>
+
 <html>
 <head>
 <title>Robot Project Glossary and Components</title>
@@ -739,6 +732,314 @@ Serial.println(lineColor); //print on the serial monitor</pre></td>
     </tr>
   </tbody>
 </table>
+
+</body>
+</html>
+
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code Explanation Chart</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Basic styling for the table and body */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f2f5;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            flex-direction: column; /* Allow content to stack vertically */
+            align-items: center;
+            min-height: 100vh;
+            box-sizing: border-box;
+        }
+        table {
+            width: 100%;
+            max-width: 900px; /* Limit table width for readability */
+            border-collapse: collapse;
+            margin-bottom: 20px; /* Space below the table */
+            background-color: #ffffff;
+            border-radius: 8px;
+            overflow: hidden; /* Ensures rounded corners apply to content */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        th, td {
+            border: 1px solid #e0e0e0;
+            padding: 12px 15px;
+            text-align: left;
+            vertical-align: top; /* Align content to the top */
+        }
+        th {
+            background-color: #f8f8f8;
+            font-weight: bold;
+            color: #333;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+        pre {
+            background-color: #eef;
+            padding: 8px;
+            border-radius: 4px;
+            overflow-x: auto; /* Allow horizontal scrolling for long code lines */
+            white-space: pre-wrap; /* Wrap long lines of text */
+        }
+        .content-section {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 900px;
+            width: 100%;
+            text-align: left;
+            margin-top: 30px; /* Space above this section */
+        }
+    </style>
+</head>
+<body>
+
+    <h1 class="text-3xl font-bold text-gray-800 mb-6">Code Explanation</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Code</th>
+                <th>What It Means</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><pre>const int rightIR = 7;
+const int leftIR = 8;</pre></td>
+                <td>This is a simple code that follows the logic of C++ code because each obstacle avoidance module needs to be associated with a certain pin.</td>
+            </tr>
+            <tr>
+                <td><pre>//IR Obstacle
+pinMode(leftIR, INPUT);
+pinMode(rightIR, INPUT);</pre></td>
+                <td>This code is used so that each of the obstacle avoidance modules can receive their input, which in this scenario is sound. As data, "IR" is an abbreviation for the infrared, in this case referring to a certain type of sensor.</td>
+            </tr>
+            <tr>
+                <td><pre>void loop() {
+  int left = digitalRead(leftIR); // 0: Obstacle detected
+  int right = digitalRead(rightIR);
+  int speed = 150;
+}</pre></td>
+                <td>This starts the loop, which will repeat several times. The digitalRead for both of the obstacle avoidance modules, will either be assigned a 0 or -0 means that the obstacle has been detected, and that the obstacle avoidance module has detected something.</td>
+            </tr>
+            <tr>
+                <td>(Implicit from screenshot, explanation for 0-0 or 0-1)</td>
+                <td>1-1 means that there is no obstacle that is being detected by the obstacle avoidance modules. This logic may be confusing at first, because usually 0 means that the module is activated. What happens is that the sensor will see that nothing is reflected, as it is turned on "HIGH", and this will indicate "1-1". The opposite applies when the IR sensor is being reflected. This is the meaning that the robot is allowed to move, and a 0 hindering the robot's movements. The final line has been used earlier, and it means that the motor speed is set to 150.</td>
+            </tr>
+            <tr>
+                <td><pre>if (!left && !right) {
+  backLeft(speed);
+} else if (!left) {
+  right();
+} else if (!right) {
+  backRight(speed);
+} else {
+  moveForward(speed);
+}</pre></td>
+                <td>This IF loop outlines four cases (listed in the order in which appear in the IF loop):
+                    <ol>
+                        <li>There is an obstacle ONLY on the left</li>
+                        <li>There is an obstacle ONLY on the right</li>
+                        <li>There is an obstacle on BOTH sides</li>
+                        <li>There are NO obstacles.</li>
+                    </ol>
+                    The !left, as explained in detail in the glossary of terms implies If there is an obstacle on the left, the other condition for the IF loop to work is the right part. The explanation below the right means that !right = 1 and means that if there cannot be an obstacle on the right. Essentially, the first IF loop means that if there is an obstacle on the left then the robot will move backwards in a left direction. However, if the condition mentioned above is not true (if there is not an obstacle on the right) then it will move to the else if. In the else if condition, there is a left condition which means that left will be set to 1, meaning that if the robot sees an obstacle left, and the right has an exclamation point, which indicates that there should be no obstacle avoidance module. Essentially, the first else if will only activate if there is an obstacle on the right, and then it will move backwards and to the right side. The second else will only activate if there is an obstacle on both the right and left sides. Then, it will move backwards in that case, as that is the robot's only option at that point. The final if will only activate if the robot decides that there are no obstacles at all. Then, the robot behaves as it would and will move forward.
+                </td>
+            </tr>
+            <tr>
+                <td><pre>void backLeft(int speed) {
+  analogWrite(A_1B, 0);
+  analogWrite(A_1A, speed);
+  analogWrite(B_1B, 0);
+  analogWrite(B_1A, 0);
+}</pre></td>
+                <td>These are functions that will activate based on the bigger if statement that is shown above. This is not too hard to understand because we have already worked with both backwards and left motions. So, what we do is activate the A_1B, because Motor A is responsible for the left motion, and the 1B hub on the H-Bridge is responsible for moving backwards. The 1B hub rule only applies for Motor A.</td>
+            </tr>
+            <tr>
+                <td><pre>void backRight(int speed) {
+  analogWrite(A_1A, 0);
+  analogWrite(A_1B, speed);
+  analogWrite(B_1B, 0);
+  analogWrite(B_1A, speed);
+}</pre></td>
+                <td>For the back right function, we must use Motor B, as that is responsible for all of the right movements. Then, we use B_1A because the 1A hub on Motor B is responsible for the backwards movement. Again, this rule about 1A is only for Motor B. The other functions for moving forward and backward have already been used throughout this project (scroll up to see those explanations).</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="content-section">
+        <h2 class="text-2xl font-bold text-gray-800 mb-4">Additional Content (For Your Next Screenshot)</h2>
+        <p class="text-gray-700">
+            This section is ready for more content. When you provide your next screenshot,
+            I will add its details here, either as more table rows or as general text,
+            depending on the content.
+        </p>
+    </div>
+
+</body>
+</html>
+
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code Explanation Chart</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Basic styling for the table and body */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f2f5;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            flex-direction: column; /* Allow content to stack vertically */
+            align-items: center;
+            min-height: 100vh;
+            box-sizing: border-box;
+        }
+        table {
+            width: 100%;
+            max-width: 900px; /* Limit table width for readability */
+            border-collapse: collapse;
+            margin-bottom: 20px; /* Space below the table */
+            background-color: #ffffff;
+            border-radius: 8px;
+            overflow: hidden; /* Ensures rounded corners apply to content */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        th, td {
+            border: 1px solid #e0e0e0;
+            padding: 12px 15px;
+            text-align: left;
+            vertical-align: top; /* Align content to the top */
+        }
+        th {
+            background-color: #f8f8f8;
+            font-weight: bold;
+            color: #333;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+        pre {
+            background-color: #eef;
+            padding: 8px;
+            border-radius: 4px;
+            overflow-x: auto; /* Allow horizontal scrolling for long code lines */
+            white-space: pre-wrap; /* Wrap long lines of text */
+        }
+        .content-section {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 900px;
+            width: 100%;
+            text-align: left;
+            margin-top: 30px; /* Space above this section */
+        }
+    </style>
+</head>
+<body>
+
+    <h1 class="text-3xl font-bold text-gray-800 mb-6">Code Explanation</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Code</th>
+                <th>What It Means</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><pre>const int rightIR = 7;
+const int leftIR = 8;</pre></td>
+                <td>This is a simple code that follows the logic of C++ code because each obstacle avoidance module needs to be associated with a certain pin.</td>
+            </tr>
+            <tr>
+                <td><pre>//IR Obstacle
+pinMode(leftIR, INPUT);
+pinMode(rightIR, INPUT);</pre></td>
+                <td>This code is used so that each of the obstacle avoidance modules can receive their input, which in this scenario is sound. As data, "IR" is an abbreviation for the infrared, in this case referring to a certain type of sensor.</td>
+            </tr>
+            <tr>
+                <td><pre>void loop() {
+  int left = digitalRead(leftIR); // 0: Obstacle detected
+  int right = digitalRead(rightIR);
+  int speed = 150;
+}</pre></td>
+                <td>This starts the loop, which will repeat several times. The digitalRead for both of the obstacle avoidance modules, will either be assigned a 0 or -0 means that the obstacle has been detected, and that the obstacle avoidance module has detected something.</td>
+            </tr>
+            <tr>
+                <td>(Implicit from screenshot, explanation for 0-0 or 0-1)</td>
+                <td>1-1 means that there is no obstacle that is being detected by the obstacle avoidance modules. This logic may be confusing at first, because usually 0 means that the module is activated. What happens is that the sensor will see that nothing is reflected, as it is turned on "HIGH", and this will indicate "1-1". The opposite applies when the IR sensor is being reflected. This is the meaning that the robot is allowed to move, and a 0 hindering the robot's movements. The final line has been used earlier, and it means that the motor speed is set to 150.</td>
+            </tr>
+            <tr>
+                <td><pre>if (!left && !right) {
+  backLeft(speed);
+} else if (!left) {
+  right();
+} else if (!right) {
+  backRight(speed);
+} else {
+  moveForward(speed);
+}</pre></td>
+                <td>This IF loop outlines four cases (listed in the order in which appear in the IF loop):
+                    <ol>
+                        <li>There is an obstacle ONLY on the left</li>
+                        <li>There is an obstacle ONLY on the right</li>
+                        <li>There is an obstacle on BOTH sides</li>
+                        <li>There are NO obstacles.</li>
+                    </ol>
+                    The !left, as explained in detail in the glossary of terms implies If there is an obstacle on the left, the other condition for the IF loop to work is the right part. The explanation below the right means that !right = 1 and means that if there cannot be an obstacle on the right. Essentially, the first IF loop means that if there is an obstacle on the left then the robot will move backwards in a left direction. However, if the condition mentioned above is not true (if there is not an obstacle on the right) then it will move to the else if. In the else if condition, there is a left condition which means that left will be set to 1, meaning that if the robot sees an obstacle left, and the right has an exclamation point, which indicates that there should be no obstacle avoidance module. Essentially, the first else if will only activate if there is an obstacle on the right, and then it will move backwards and to the right side. The second else will only activate if there is an obstacle on both the right and left sides. Then, it will move backwards in that case, as that is the robot's only option at that point. The final if will only activate if the robot decides that there are no obstacles at all. Then, the robot behaves as it would and will move forward.
+                </td>
+            </tr>
+            <tr>
+                <td><pre>void backLeft(int speed) {
+  analogWrite(A_1B, 0);
+  analogWrite(A_1A, speed);
+  analogWrite(B_1B, 0);
+  analogWrite(B_1A, 0);
+}</pre></td>
+                <td>These are functions that will activate based on the bigger if statement that is shown above. This is not too hard to understand because we have already worked with both backwards and left motions. So, what we do is activate the A_1B, because Motor A is responsible for the left motion, and the 1B hub on the H-Bridge is responsible for moving backwards. The 1B hub rule only applies for Motor A.</td>
+            </tr>
+            <tr>
+                <td><pre>void backRight(int speed) {
+  analogWrite(A_1A, 0);
+  analogWrite(A_1B, speed);
+  analogWrite(B_1B, 0);
+  analogWrite(B_1A, speed);
+}</pre></td>
+                <td>For the back right function, we must use Motor B, as that is responsible for all of the right movements. Then, we use B_1A because the 1A hub on Motor B is responsible for the backwards movement. Again, this rule about 1A is only for Motor B. The other functions for moving forward and backward have already been used throughout this project (scroll up to see those explanations).</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="content-section">
+        <h2 class="text-2xl font-bold text-gray-800 mb-4">Additional Content (For Your Next Screenshot)</h2>
+        <p class="text-gray-700">
+            This section is ready for more content. When you provide your next screenshot,
+            I will add its details here, either as more table rows or as general text,
+            depending on the content.
+        </p>
+    </div>
 
 </body>
 </html>
