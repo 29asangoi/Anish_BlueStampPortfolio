@@ -867,15 +867,7 @@ pinMode(rightIR, INPUT);</pre></td>
         </tbody>
     </table>
 
-    <div class="content-section">
-        <h2 class="text-2xl font-bold text-gray-800 mb-4">Additional Content (For Your Next Screenshot)</h2>
-        <p class="text-gray-700">
-            This section is ready for more content. When you provide your next screenshot,
-            I will add its details here, either as more table rows or as general text,
-            depending on the content.
-        </p>
-    </div>
-
+    
 </body>
 </html>
 
