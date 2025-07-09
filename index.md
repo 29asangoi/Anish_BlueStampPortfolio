@@ -14,16 +14,25 @@ Imagine the greater possiblities of being able to use your robot as a pet, only 
 
 ---
 
-<!--
-# Final Milestone
+## Final Milestone
 
-<iframe width="200" height="200" src="https://www.youtube.com/embed/F7M7imOVGug" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
+---
 
-- What you've accomplished since your previous milestone
-- Biggest challenges and triumphs
-- Summary of key topics learned
-- What you hope to learn next
--->
+### Obstacle Avoidance Module
+
+<iframe
+  width="560"
+  height="315"
+  src="https://www.youtube.com/embed/5Uf2-arlHqA"
+  title="YouTube video player"
+  frameborder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+  allowfullscreen>
+</iframe>
+
+The first section of my final milestone involving making an obstacle avoidance module for my robot. For the assembly, there were threee attachment points for the obstacle avoidance module. One of the them was the OUT pin, which connects the obstacle avoidance module to the Arduino R3 Module. Then, another section is connected to GRD, and another to the 5V section. However, this process was different because I attached these to different points on the breadboard. In order to do this, I attached one wire from the exsisting GRD and 5V sections on the breadboard, and then the end of the wires was attached to the new connection point on the breadboard. I also learned about the pentimoeter, which is the components that needs to be screwed in enough in order to power up the LEDs. 
+
+For the code, if the robot's obstacle avoidance modules do not face any obstacles, its natural behavior is to move forward. However, when I first tested this out the robot would have one motor move forwards and one move backwards, so I was able to change this so that the robot would move normally. Another challenge that I faced was that sometimes the back left and the back right functions were not working, despite activating the H-Bridge hubs that were supposed to be activating those sections. So, in order to solve this problem I was able to go back to some older code and found out that there the back left and back right functions were actually working. Another issue that I ran into was that the obstacle avoidance modules were not properly working, so I had to replace these modules in order to allow them to properly function. Finally, after much debugging and rengineering I was able to get my obstacle avoidance modules to function properly. 
 
 ---
 
