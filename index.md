@@ -34,12 +34,9 @@ The first section of my final milestone involving making an obstacle avoidance m
 
 For the code, if the robot's obstacle avoidance modules do not face any obstacles, its natural behavior is to move forward. However, when I first tested this out the robot would have one motor move forwards and one move backwards, so I was able to change this so that the robot would move normally. Another challenge that I faced was that sometimes the back left and the back right functions were not working, despite activating the H-Bridge hubs that were supposed to be activating those sections. So, in order to solve this problem I was able to go back to some older code and found out that there the back left and back right functions were actually working. Another issue that I ran into was that the obstacle avoidance modules were not properly working, so I had to replace these modules in order to allow them to properly function. Finally, after much debugging and rengineering I was able to get my obstacle avoidance modules to function properly. 
 
-Below is a schmeatic that explains the obstacle avoidance module and a little more about how it works. 
+Below is a schmatic that explains the obstacle avoidance module and a little more about how it works. 
 
-<img src="https://docs.sunfounder.com/projects/ultimate-sensor-kit/_images/ir_obstacle.jpg" 
-     alt="SunFounder IR Obstacle Avoidance Wiring Diagram" 
-     width="800" 
-     style="max-width:100%; height:auto; display:block; margin: 0 auto;">
+ <img src="https://docs.sunfounder.com/projects/3in1-kit-v2/_images/car_ir_obstacle_wiring_diagram.png" alt="Wiring diagram for the SunFounder car project with IR obstacle avoidance">
 
 
 
