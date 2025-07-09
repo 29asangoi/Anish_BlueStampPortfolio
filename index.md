@@ -36,10 +36,11 @@ For the code, if the robot's obstacle avoidance modules do not face any obstacle
 
 Below is a schmeatic that explains the obstacle avoidance module and a little more about how it works. 
 
-<img src="https://docs.sunfounder.com/projects/3in1-kit-v2/_images/car_avoid.jpg" 
+<img src="https://docs.sunfounder.com/projects/ultimate-sensor-kit/_images/ir_obstacle.jpg" 
      alt="SunFounder IR Obstacle Avoidance Wiring Diagram" 
      width="800" 
      style="max-width:100%; height:auto; display:block; margin: 0 auto;">
+
 
 
 
