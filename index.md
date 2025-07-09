@@ -72,9 +72,9 @@ Here is a wiring diagram for the speed calibration
 
 <h6>Detailed Wiring Diagram for Speed Calibration - SunFounder Human Following Robot</h6>
 
-<img src="https://docs.sunfounder.com/projects/3in1-kit-v2/_images/car_avoid.jpg" 
-     alt="SunFounder IR Obstacle Avoidance Wiring Diagram" 
-     width="800" 
+<img src="https://docs.sunfounder.com/projects/ultimate-sensor-kit/_images/ir_obstacle.jpg"
+     alt="SunFounder IR Obstacle Sensor Module"
+     width="800"
      style="max-width:100%; height:auto; display:block; margin: 0 auto;">
 
 
