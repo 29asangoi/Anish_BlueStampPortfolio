@@ -34,6 +34,15 @@ The first section of my final milestone involving making an obstacle avoidance m
 
 For the code, if the robot's obstacle avoidance modules do not face any obstacles, its natural behavior is to move forward. However, when I first tested this out the robot would have one motor move forwards and one move backwards, so I was able to change this so that the robot would move normally. Another challenge that I faced was that sometimes the back left and the back right functions were not working, despite activating the H-Bridge hubs that were supposed to be activating those sections. So, in order to solve this problem I was able to go back to some older code and found out that there the back left and back right functions were actually working. Another issue that I ran into was that the obstacle avoidance modules were not properly working, so I had to replace these modules in order to allow them to properly function. Finally, after much debugging and rengineering I was able to get my obstacle avoidance modules to function properly. 
 
+### Ultrasonic Module
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/q4kkl5KrUAc" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+The second section of the final milestone involved making an ultrasonic module for my robot. For the assembly, there are four attachment points for the ultrasonic module. One of these is the GRD and the 5V pin, which I attached near the connection point in the obstacle avoidance modules. I was able to do due to the rule that states that the current flows from the vertical positions in the breadboard. I also learned about the OUT and TRIG pins, which essentially act as the both input and outputs for the overall robot.
+
+For the code, there are severl portions that act as the robots if loop. This will keep repeating contiously and is important to use when caculating distance. Naturally, the robot moves forward, but if it detects something within 5 to 25 cm, it will move backwards. However, if it detects something less than 5 cm away, then it will first stop, and then it will delay in roder to allow the transition time to move in the right direction. I ran into the issue of having too many delays, and that the robot would not move properly. I fixed the delays and was able to get the robot to move more contiously. To solve the moving issue, I just set both motors to the same speed by using two different variables, so that both motor would be working at the same speed.
+
+Throughout this project, I also learned a lot about how thr ultrasonic module works overall. The formula will take the wave speed, and needs to be able to see the amount of time that it takes to travel to the object in order to determine the distance. This is also expained using the speed, time, and distance formula, but with the speed matching the speed of specifically sound waves. 
 
 ---
 
