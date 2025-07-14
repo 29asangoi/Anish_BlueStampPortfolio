@@ -718,7 +718,7 @@ return distance;</pre></td>
 </body>
 </html>
 
-<h2>Chart</h2>
+<h2>Follow your Hand Code</h2>
 
 <table>
   <thead>
