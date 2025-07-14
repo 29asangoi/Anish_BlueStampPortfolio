@@ -614,6 +614,35 @@ Serial.println(lineColor); //print on the serial monitor</pre></td>
 </body>
 </html>
 
+<h2>Chart</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Chart</th>
+      <th>What it Means</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        <pre><code>if (distance > 5 && distance < 10) {
+  moveForward(speed);
+} else if (!right) {
+  turnLeft(speed);
+} else if (!left) {
+  turnRight(speed);
+} else {
+  stopMove();
+}
+</code></pre>
+      </td>
+      <td>
+        This code combines all of the past elements that we have been using. It says that if the distance is between 5 and 10, then the robot moves forward. Then, if that is not the case, it detects if there is an obstacle on the right, and if there is then it will turn left as a result. If there is no obstacle on the right, then it will see if there is an obstacle on the left. If there is an obstacle there (on the left), then the robot will move right. If none of these conditions are true, then the robot stops moving completely.
+      </td>
+    </tr>
+  </tbody>
+</table>
 
 
 <html>
@@ -719,7 +748,83 @@ return distance;</pre></td>
 </body>
 </html>
 
+<h2>Glossary of Terms</h2>
 
+<table>
+  <thead>
+    <tr>
+      <th>Term</th>
+      <th>What it Means</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>!</td>
+      <td>In C++, when you use the exclamation point it means <strong>not</strong> or the <strong>opposite of</strong>. Its technical meaning is called the "logical NOT" operator.</td>
+    </tr>
+    <tr>
+      <td>&&</td>
+      <td>This means that both of the conditions separated by this symbol must be true. This is formally known as the "<strong>logical AND</strong>" operator.</td>
+    </tr>
+    <tr>
+      <td>!left</td>
+      <td>This means that it will refer to an obstacle on the left obstacle avoidance module. This condition will hold true if the obstacle avoidance module detects an obstacle on the left.</td>
+    </tr>
+    <tr>
+      <td>!right</td>
+      <td>This refers to the right obstacle avoidance module. This condition will hold true if the obstacle avoidance module detects an obstacle on the left side.</td>
+    </tr>
+    <tr>
+      <td>left</td>
+      <td>This will control the left obstacle avoidance module and holds true if there is not an obstacle on the left.</td>
+    </tr>
+    <tr>
+      <td>right</td>
+      <td>This will control the right obstacle avoidance module and holds true if there is not an obstacle on the right.</td>
+    </tr>
+    <tr>
+      <td>pin</td>
+      <td>For the human-following robot, the "pin" term refers to the Arduino R3 board that the wires are connected to. On the right side, there are some numbers from 0-13. In this case, "pin" refers to any of these numbers.</td>
+    </tr>
+    <tr>
+      <td>value</td>
+      <td>
+        <ol>
+          <li><strong>"HIGH"</strong> - This to the computer means "1", meaning that the component to which the high value is assigned will activate.</li>
+          <li><strong>"LOW"</strong> - This to the computer means "0", meaning that the component to which the high value is assigned will not activate.</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td>(pin, value)</td>
+      <td>These two terms above are referring to the (pin, value) format used in the code.</td>
+    </tr>
+    <tr>
+      <td>pin</td>
+      <td>For the human-following robot, the "pin" term refers to the Arduino R3 board that the wires are connected to. On the right side, there are some numbers from 0-13. In this case, "pin" refers to any of these numbers. This however refers to what mode the pin is being set to.</td>
+    </tr>
+    <tr>
+      <td>mode</td>
+      <td>Refers to INPUT -> What is being plugged into <br> Refers to OUTPUT</td>
+    </tr>
+    <tr>
+      <td>for</td>
+      <td>Used to repeat a certain amount of statements. Important: These statements <strong>must</strong> be in the curly braces. (see last code term for more information)</td>
+    </tr>
+    <tr>
+      <td>initialization</td>
+      <td>Will always be one of the first things to happen in the loop. This occurs <strong>once</strong> throughout the entire loop.</td>
+    </tr>
+    <tr>
+      <td>condition</td>
+      <td>This is what is tested throughout the loop. If true -> executed. If it is false, then the loop ends.</td>
+    </tr>
+    <tr>
+      <td>increment</td>
+      <td>Always goes through each time if the condition (as described earlier) is true.</td>
+    </tr>
+  </tbody>
+</table>
 
 
 
