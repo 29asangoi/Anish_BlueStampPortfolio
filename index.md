@@ -18,6 +18,29 @@ Imagine the greater possiblities of being able to use your robot as a pet, only 
 
 ---
 
+### Human Following Section
+
+<iframe
+  width="560"
+  height="315"
+  src="https://www.youtube.com/embed/gOkLrScD8wM"
+  title="YouTube video player"
+  frameborder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+  allowfullscreen>
+</iframe>
+
+For my human following robot, I did not do any extra assembly, and instead just combined the elements of the ultrasonic module and the obstacle avoidance module, as that is what this project is really all about. The code remained the same mostly, except I added a bigger if loop that would be able to detect the distance first, and then would move to the obstacle avoidance modules, meaning that it would see if the user'a hand was at the left or right. However, I also realized that any obkect in motion would work for the human following robot, and I realized that it could follow my foot and could effortlessly follow me around. I did not face too many challenges throughout this process.
+
+Hopefully, for my next steps, I can connect the remote control, which is one of my modifications to the LEDs to see how they work. Below is an overall schematic that explains the overall wiring of the robot.
+
+<img src="https://docs.sunfounder.com/projects/3in1-kit-v2/en/latest/_images/car_7_8.png"
+         alt="Ultrasonic Sensor and Obstacle Avoidance Diagram for a Car Project"
+         width="800"
+         style="max-width:100%; height:auto; display:block; margin: 0 auto;">
+
+
+
 ### Obstacle Avoidance Module
 
 <iframe
