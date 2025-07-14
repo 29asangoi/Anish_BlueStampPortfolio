@@ -705,10 +705,10 @@ Serial.println(lineColor); //print on the serial monitor</pre></td>
       <td>For the human-following robot, the "pin" term refers to the Arduino R3 board that the wires are connected to. On the right side, there are some numbers from 0-13. In this case, "pin" refers to any of these numbers.</td>
     </tr>
     <tr>
-      <td>value</td>
-      <td>
-        <ol>
-          <li><strong>"HIGH"</strong> - This to the computer means "1"
+        <td>value</td>
+        <td>
+          <ol>
+            <li><strong>"HIGH"</strong> - This to the computer means "1"
 
 
 
@@ -717,7 +717,11 @@ Serial.println(lineColor); //print on the serial monitor</pre></td>
 
           
             
-<h2>Components and Their Functions</h2>
+            
+  
+  
+  
+<h1>Components and Their Functions</h2>
 
 <table>
   <thead>
