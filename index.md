@@ -665,6 +665,61 @@ Serial.println(lineColor); //print on the serial monitor</pre></td>
 </head>
 <body>
 
+<h1>Ultrasonic Sensor Code Explanation</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Code</th>
+                <th>What It Means</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><pre>const int trigPin = 3;
+const int echoPin = 4;</pre></td>
+                <td>Set the trig and echo pins, which are located on the Ultrasonic Module, to their respective pin locations on the Arduino Uno Board.</td>
+            </tr>
+            <tr>
+                <td><pre>//ultrasonic
+pinMode(echoPin, INPUT);
+pinMode(trigPin, OUTPUT);</pre></td>
+                <td>The ultrasonic module has these two pins, echo and trig. The echo pin will be the input and provide the signal, and the trig pins will be the output and give the output that results from the output signal.</td>
+            </tr>
+            <tr>
+                <td><pre>void loop() {
+  float distance = readSensorData();
+  if (distance > 25) {
+    moveForward(200);
+  } else if (distance < 10 && distance > 2) {
+    moveBackward(200);
+  } else {
+    stopMove();
+  }
+}</pre></td>
+                <td>The loop will keep repeating, and now we have started this. The float distance will store the distance variable, and will read the distance, and will store it as a float if needed (as a decimal point). <strong>Distance units are in centimeters.</strong> If the robot detects the distance to be greater than 25 units, then it will move forward at a speed of 200, as this unit will still allow the robot to smoothly move forward. However, the else if runs on two conditions, one of which being if the distance is greater than 2 units, and is less than 10, but greater than 2. If these conditions are true, then the robot moves backward at a speed of 200. Essentially, if 2 &lt; distance &lt; 10, the robot moves backwards. If none of the above conditions are true, the robot will completely stop moving.</td>
+            </tr>
+            <tr>
+                <td><pre>float readSensorData() {
+  digitalWrite(trigPin, LOW);
+  delayMicroseconds(2);
+  digitalWrite(trigPin, HIGH);
+  delayMicroseconds(10);
+  digitalWrite(trigPin, LOW);
+  float distance = pulseIn(echoPin, HIGH);
+}</pre></td>
+                <td>This code acts as a function and will read the data on the sensor, specifically the ultrasonic module. First, it will set the trig pin to low, and then wait for just 2 microseconds. Then, the trig pin is set to HIGH for 10 microseconds. In turn, this will give a sound wave from the ultrasonic sensor. Next, there is a formula that is used in order to calculate the distance. This will calculate the distance, which is sent back to the void loop. This formula is <strong>distance = speed of sound/time</strong>. The 58.00 is the speed of sound, and is converted from the speed of sound. Additionally, the time gets changed to use a unit of centimeters, and the speed of sound is used to help with this calculation. Finally, after everything is calculated, the distance is returned.</td>
+            </tr>
+            <tr>
+                <td><pre>/ 58.00; //Equivalent to (340m/s*us)/2
+return distance;</pre></td>
+                <td>This is the continuation of the previous code block, specifically the calculation and return of the distance.</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
+
+
 
 
 
