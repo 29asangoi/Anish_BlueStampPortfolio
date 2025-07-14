@@ -614,36 +614,6 @@ Serial.println(lineColor); //print on the serial monitor</pre></td>
 </body>
 </html>
 
-<h2>Chart</h2>
-
-<table>
-  <thead>
-    <tr>
-      <th>Chart</th>
-      <th>What it Means</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>
-        <pre><code>if (distance > 5 && distance < 10) {
-  moveForward(speed);
-} else if (!right) {
-  turnLeft(speed);
-} else if (!left) {
-  turnRight(speed);
-} else {
-  stopMove();
-}
-</code></pre>
-      </td>
-      <td>
-        This code combines all of the past elements that we have been using. It says that if the distance is between 5 and 10, then the robot moves forward. Then, if that is not the case, it detects if there is an obstacle on the right, and if there is then it will turn left as a result. If there is no obstacle on the right, then it will see if there is an obstacle on the left. If there is an obstacle there (on the left), then the robot will move right. If none of these conditions are true, then the robot stops moving completely.
-      </td>
-    </tr>
-  </tbody>
-</table>
-
 
 <html>
 <head>
@@ -747,6 +717,37 @@ return distance;</pre></td>
     </table>
 </body>
 </html>
+
+<h2>Chart</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Chart</th>
+      <th>What it Means</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        <pre><code>if (distance > 5 && distance < 10) {
+  moveForward(speed);
+} else if (!right) {
+  turnLeft(speed);
+} else if (!left) {
+  turnRight(speed);
+} else {
+  stopMove();
+}
+</code></pre>
+      </td>
+      <td>
+        This code combines all of the past elements that we have been using. It says that if the distance is between 5 and 10, then the robot moves forward. Then, if that is not the case, it detects if there is an obstacle on the right, and if there is then it will turn left as a result. If there is no obstacle on the right, then it will see if there is an obstacle on the left. If there is an obstacle there (on the left), then the robot will move right. If none of these conditions are true, then the robot stops moving completely.
+      </td>
+    </tr>
+  </tbody>
+</table>
+
 
 <h2>Glossary of Terms</h2>
 
