@@ -11,6 +11,18 @@ Imagine the greater possiblities of being able to use your robot as a pet, only 
 
 <img src="AnishS_(2).jpg" width="400" alt="Anish" />
 
+---
+
+## Modifications
+
+Here is my final video of my project working!
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/kvfgtCt7e14?si=yHYKXcKN11CLE4w-" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+For my modifications, I worked on the remote control and was able to wire it to my car, but in order to do this I actually first transitioned to the Arduino MEGA, which acts as a bigger 'brain' of the Arduino Uno, which I was originally given to work with. This transition proved to be a challenge because it required a lot of rewiring for my overall project, but I was able to get the remote control to connect to my robot! 
+
+Next, I added 5 LEDs, one LED was for a speed of 200, and I had 4 LEDs that would light up if a certain key was pressed. The LEDs are placed in a certain way, such as forward, left, right, and backwards, as these are coordinated to the various omnidirectional movement of my robot. When the car moves forward, the red LED (which is located in the front), will light up. The same applies to the other LEDS. 
+
 
 ---
 
